@@ -18,6 +18,14 @@
 		84A7E58A179F14A8002CE6FD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E589179F14A8002CE6FD /* Default-568h@2x.png */; };
 		84A7E58D179F14A8002CE6FD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E58B179F14A8002CE6FD /* MainStoryboard.storyboard */; };
 		84A7E590179F14A8002CE6FD /* CFPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A7E58F179F14A8002CE6FD /* CFPViewController.m */; };
+		84A7E599179F1836002CE6FD /* background-wrapper.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E597179F1836002CE6FD /* background-wrapper.png */; };
+		84A7E59A179F1836002CE6FD /* background-wrapper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E598179F1836002CE6FD /* background-wrapper@2x.png */; };
+		84A7E59F179F4D5C002CE6FD /* cancel-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E59D179F4D5C002CE6FD /* cancel-button.png */; };
+		84A7E5A0179F4D5C002CE6FD /* cancel-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E59E179F4D5C002CE6FD /* cancel-button@2x.png */; };
+		84A7E5A4179FCC84002CE6FD /* addPayment-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E5A2179FCC84002CE6FD /* addPayment-button.png */; };
+		84A7E5A5179FCC84002CE6FD /* addPayment-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E5A3179FCC84002CE6FD /* addPayment-button@2x.png */; };
+		84A7E5A8179FCDE2002CE6FD /* addPayment-button(active).png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E5A6179FCDE2002CE6FD /* addPayment-button(active).png */; };
+		84A7E5A9179FCDE2002CE6FD /* addPayment-button(active)@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E5A7179FCDE2002CE6FD /* addPayment-button(active)@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +45,14 @@
 		84A7E58C179F14A8002CE6FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		84A7E58E179F14A8002CE6FD /* CFPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFPViewController.h; sourceTree = "<group>"; };
 		84A7E58F179F14A8002CE6FD /* CFPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFPViewController.m; sourceTree = "<group>"; };
+		84A7E597179F1836002CE6FD /* background-wrapper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-wrapper.png"; sourceTree = "<group>"; };
+		84A7E598179F1836002CE6FD /* background-wrapper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-wrapper@2x.png"; sourceTree = "<group>"; };
+		84A7E59D179F4D5C002CE6FD /* cancel-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-button.png"; sourceTree = "<group>"; };
+		84A7E59E179F4D5C002CE6FD /* cancel-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-button@2x.png"; sourceTree = "<group>"; };
+		84A7E5A2179FCC84002CE6FD /* addPayment-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addPayment-button.png"; sourceTree = "<group>"; };
+		84A7E5A3179FCC84002CE6FD /* addPayment-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addPayment-button@2x.png"; sourceTree = "<group>"; };
+		84A7E5A6179FCDE2002CE6FD /* addPayment-button(active).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addPayment-button(active).png"; sourceTree = "<group>"; };
+		84A7E5A7179FCDE2002CE6FD /* addPayment-button(active)@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addPayment-button(active)@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +99,7 @@
 		84A7E579179F14A8002CE6FD /* CheckoutFlowPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				84A7E596179F15F9002CE6FD /* Assets */,
 				84A7E582179F14A8002CE6FD /* CFPAppDelegate.h */,
 				84A7E583179F14A8002CE6FD /* CFPAppDelegate.m */,
 				84A7E58B179F14A8002CE6FD /* MainStoryboard.storyboard */,
@@ -105,6 +122,37 @@
 				84A7E589179F14A8002CE6FD /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84A7E596179F15F9002CE6FD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				84A7E5A1179F4D62002CE6FD /* Buttons */,
+				84A7E59B179F183A002CE6FD /* Backgrounds */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		84A7E59B179F183A002CE6FD /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				84A7E597179F1836002CE6FD /* background-wrapper.png */,
+				84A7E598179F1836002CE6FD /* background-wrapper@2x.png */,
+			);
+			name = Backgrounds;
+			sourceTree = "<group>";
+		};
+		84A7E5A1179F4D62002CE6FD /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				84A7E5A6179FCDE2002CE6FD /* addPayment-button(active).png */,
+				84A7E5A7179FCDE2002CE6FD /* addPayment-button(active)@2x.png */,
+				84A7E5A2179FCC84002CE6FD /* addPayment-button.png */,
+				84A7E5A3179FCC84002CE6FD /* addPayment-button@2x.png */,
+				84A7E59D179F4D5C002CE6FD /* cancel-button.png */,
+				84A7E59E179F4D5C002CE6FD /* cancel-button@2x.png */,
+			);
+			name = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +212,14 @@
 				84A7E588179F14A8002CE6FD /* Default@2x.png in Resources */,
 				84A7E58A179F14A8002CE6FD /* Default-568h@2x.png in Resources */,
 				84A7E58D179F14A8002CE6FD /* MainStoryboard.storyboard in Resources */,
+				84A7E599179F1836002CE6FD /* background-wrapper.png in Resources */,
+				84A7E59A179F1836002CE6FD /* background-wrapper@2x.png in Resources */,
+				84A7E59F179F4D5C002CE6FD /* cancel-button.png in Resources */,
+				84A7E5A0179F4D5C002CE6FD /* cancel-button@2x.png in Resources */,
+				84A7E5A4179FCC84002CE6FD /* addPayment-button.png in Resources */,
+				84A7E5A5179FCC84002CE6FD /* addPayment-button@2x.png in Resources */,
+				84A7E5A8179FCDE2002CE6FD /* addPayment-button(active).png in Resources */,
+				84A7E5A9179FCDE2002CE6FD /* addPayment-button(active)@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +357,7 @@
 				84A7E595179F14A8002CE6FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
