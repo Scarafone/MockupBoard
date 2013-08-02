@@ -7,6 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840CAF3917A8595200843345 /* CFPAddPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840CAF3817A8595200843345 /* CFPAddPaymentViewController.m */; };
+		840CAF3F17A85D5B00843345 /* addPayment-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF3B17A85D5B00843345 /* addPayment-button.png */; };
+		840CAF4017A85D5B00843345 /* addPayment-button(active).png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF3C17A85D5B00843345 /* addPayment-button(active).png */; };
+		840CAF4117A85D5B00843345 /* addPayment-button(active)@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF3D17A85D5B00843345 /* addPayment-button(active)@2x.png */; };
+		840CAF4217A85D5B00843345 /* addPayment-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF3E17A85D5B00843345 /* addPayment-button@2x.png */; };
+		840CAF4517A865EE00843345 /* CFPMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840CAF4417A865EE00843345 /* CFPMainMenuViewController.m */; };
+		840CAF4717A88F1A00843345 /* RecentOrdersStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF4617A88F1A00843345 /* RecentOrdersStoryboard.storyboard */; };
+		840CAF4917A890CF00843345 /* headerBackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF4817A890CF00843345 /* headerBackgroundImage.png */; };
+		840CAF4B17A8927C00843345 /* leftTableViewWrapper.png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF4A17A8927C00843345 /* leftTableViewWrapper.png */; };
+		840CAF4D17A8938D00843345 /* searchBarBackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF4C17A8938D00843345 /* searchBarBackgroundImage.png */; };
+		840CAF4F17A89B2B00843345 /* magnifyingGlass.png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF4E17A89B2B00843345 /* magnifyingGlass.png */; };
+		840CAF5717A995E300843345 /* completedorders_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF5117A995E200843345 /* completedorders_icon.png */; };
+		840CAF5817A995E300843345 /* completedorders_icon(active).png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF5217A995E200843345 /* completedorders_icon(active).png */; };
+		840CAF5917A995E300843345 /* homebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF5317A995E200843345 /* homebutton.png */; };
+		840CAF5A17A995E300843345 /* homebutton(active).png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF5417A995E200843345 /* homebutton(active).png */; };
+		840CAF5B17A995E300843345 /* openorders_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF5517A995E200843345 /* openorders_icon.png */; };
+		840CAF5C17A995E300843345 /* openorders_icon(active).png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF5617A995E200843345 /* openorders_icon(active).png */; };
+		840CAF6017A9B73800843345 /* swipebuttonbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF5F17A9B73700843345 /* swipebuttonbackground.png */; };
+		840CAF6217A9B88A00843345 /* slidebarselectionimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF6117A9B88900843345 /* slidebarselectionimage.png */; };
+		840CAF6817A9C05100843345 /* buttonselectionhighlightimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF6717A9C05000843345 /* buttonselectionhighlightimage.png */; };
+		840CAF6A17A9C32300843345 /* MultipaymentStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840CAF6917A9C32300843345 /* MultipaymentStoryboard.storyboard */; };
+		840CAF6F17A9E43100843345 /* CFPRecentOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840CAF6E17A9E43100843345 /* CFPRecentOrderViewController.m */; };
+		841AA7B417AAF0720070858D /* tableheadersectionbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 841AA7B317AAF0720070858D /* tableheadersectionbackground.png */; };
+		841AA7B617AB06F40070858D /* slidebuttonarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 841AA7B517AB06F40070858D /* slidebuttonarrow.png */; };
+		841AA7BA17AB215F0070858D /* CFPRecentOrderMasterInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841AA7B917AB215F0070858D /* CFPRecentOrderMasterInformationViewController.m */; };
+		841AA7BE17AB221C0070858D /* CFPRecentOrderSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841AA7BD17AB221C0070858D /* CFPRecentOrderSummaryViewController.m */; };
+		841AA7C517AB2AAF0070858D /* CFPRecentOrderPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841AA7C417AB2AAF0070858D /* CFPRecentOrderPaymentViewController.m */; };
+		841AA7C817AB2ABB0070858D /* CFPRecentOrderItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841AA7C717AB2ABB0070858D /* CFPRecentOrderItemViewController.m */; };
+		841AA7CB17AB2AC70070858D /* CFPRecentOrderOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841AA7CA17AB2AC70070858D /* CFPRecentOrderOptionsViewController.m */; };
 		84A7E574179F14A8002CE6FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A7E573179F14A8002CE6FD /* UIKit.framework */; };
 		84A7E576179F14A8002CE6FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A7E575179F14A8002CE6FD /* Foundation.framework */; };
 		84A7E578179F14A8002CE6FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A7E577179F14A8002CE6FD /* CoreGraphics.framework */; };
@@ -22,13 +51,46 @@
 		84A7E59A179F1836002CE6FD /* background-wrapper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E598179F1836002CE6FD /* background-wrapper@2x.png */; };
 		84A7E59F179F4D5C002CE6FD /* cancel-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E59D179F4D5C002CE6FD /* cancel-button.png */; };
 		84A7E5A0179F4D5C002CE6FD /* cancel-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E59E179F4D5C002CE6FD /* cancel-button@2x.png */; };
-		84A7E5A4179FCC84002CE6FD /* addPayment-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E5A2179FCC84002CE6FD /* addPayment-button.png */; };
-		84A7E5A5179FCC84002CE6FD /* addPayment-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E5A3179FCC84002CE6FD /* addPayment-button@2x.png */; };
-		84A7E5A8179FCDE2002CE6FD /* addPayment-button(active).png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E5A6179FCDE2002CE6FD /* addPayment-button(active).png */; };
-		84A7E5A9179FCDE2002CE6FD /* addPayment-button(active)@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A7E5A7179FCDE2002CE6FD /* addPayment-button(active)@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		840CAF3717A8595200843345 /* CFPAddPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPAddPaymentViewController.h; sourceTree = "<group>"; };
+		840CAF3817A8595200843345 /* CFPAddPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPAddPaymentViewController.m; sourceTree = "<group>"; };
+		840CAF3B17A85D5B00843345 /* addPayment-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addPayment-button.png"; sourceTree = "<group>"; };
+		840CAF3C17A85D5B00843345 /* addPayment-button(active).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addPayment-button(active).png"; sourceTree = "<group>"; };
+		840CAF3D17A85D5B00843345 /* addPayment-button(active)@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addPayment-button(active)@2x.png"; sourceTree = "<group>"; };
+		840CAF3E17A85D5B00843345 /* addPayment-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addPayment-button@2x.png"; sourceTree = "<group>"; };
+		840CAF4317A865EE00843345 /* CFPMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPMainMenuViewController.h; sourceTree = "<group>"; };
+		840CAF4417A865EE00843345 /* CFPMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPMainMenuViewController.m; sourceTree = "<group>"; };
+		840CAF4617A88F1A00843345 /* RecentOrdersStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RecentOrdersStoryboard.storyboard; sourceTree = "<group>"; };
+		840CAF4817A890CF00843345 /* headerBackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headerBackgroundImage.png; sourceTree = "<group>"; };
+		840CAF4A17A8927C00843345 /* leftTableViewWrapper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftTableViewWrapper.png; sourceTree = "<group>"; };
+		840CAF4C17A8938D00843345 /* searchBarBackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchBarBackgroundImage.png; sourceTree = "<group>"; };
+		840CAF4E17A89B2B00843345 /* magnifyingGlass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnifyingGlass.png; sourceTree = "<group>"; };
+		840CAF5117A995E200843345 /* completedorders_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = completedorders_icon.png; sourceTree = "<group>"; };
+		840CAF5217A995E200843345 /* completedorders_icon(active).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "completedorders_icon(active).png"; sourceTree = "<group>"; };
+		840CAF5317A995E200843345 /* homebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homebutton.png; sourceTree = "<group>"; };
+		840CAF5417A995E200843345 /* homebutton(active).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homebutton(active).png"; sourceTree = "<group>"; };
+		840CAF5517A995E200843345 /* openorders_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openorders_icon.png; sourceTree = "<group>"; };
+		840CAF5617A995E200843345 /* openorders_icon(active).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "openorders_icon(active).png"; sourceTree = "<group>"; };
+		840CAF5F17A9B73700843345 /* swipebuttonbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipebuttonbackground.png; sourceTree = "<group>"; };
+		840CAF6117A9B88900843345 /* slidebarselectionimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slidebarselectionimage.png; sourceTree = "<group>"; };
+		840CAF6717A9C05000843345 /* buttonselectionhighlightimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonselectionhighlightimage.png; sourceTree = "<group>"; };
+		840CAF6917A9C32300843345 /* MultipaymentStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MultipaymentStoryboard.storyboard; sourceTree = "<group>"; };
+		840CAF6D17A9E43100843345 /* CFPRecentOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPRecentOrderViewController.h; sourceTree = "<group>"; };
+		840CAF6E17A9E43100843345 /* CFPRecentOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPRecentOrderViewController.m; sourceTree = "<group>"; };
+		841AA7B317AAF0720070858D /* tableheadersectionbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tableheadersectionbackground.png; sourceTree = "<group>"; };
+		841AA7B517AB06F40070858D /* slidebuttonarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slidebuttonarrow.png; sourceTree = "<group>"; };
+		841AA7B817AB215F0070858D /* CFPRecentOrderMasterInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPRecentOrderMasterInformationViewController.h; sourceTree = "<group>"; };
+		841AA7B917AB215F0070858D /* CFPRecentOrderMasterInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPRecentOrderMasterInformationViewController.m; sourceTree = "<group>"; };
+		841AA7BC17AB221C0070858D /* CFPRecentOrderSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPRecentOrderSummaryViewController.h; sourceTree = "<group>"; };
+		841AA7BD17AB221C0070858D /* CFPRecentOrderSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPRecentOrderSummaryViewController.m; sourceTree = "<group>"; };
+		841AA7C317AB2AAF0070858D /* CFPRecentOrderPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPRecentOrderPaymentViewController.h; sourceTree = "<group>"; };
+		841AA7C417AB2AAF0070858D /* CFPRecentOrderPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPRecentOrderPaymentViewController.m; sourceTree = "<group>"; };
+		841AA7C617AB2ABB0070858D /* CFPRecentOrderItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPRecentOrderItemViewController.h; sourceTree = "<group>"; };
+		841AA7C717AB2ABB0070858D /* CFPRecentOrderItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPRecentOrderItemViewController.m; sourceTree = "<group>"; };
+		841AA7C917AB2AC70070858D /* CFPRecentOrderOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPRecentOrderOptionsViewController.h; sourceTree = "<group>"; };
+		841AA7CA17AB2AC70070858D /* CFPRecentOrderOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPRecentOrderOptionsViewController.m; sourceTree = "<group>"; };
 		84A7E570179F14A8002CE6FD /* CheckoutFlowPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckoutFlowPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A7E573179F14A8002CE6FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		84A7E575179F14A8002CE6FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,10 +111,6 @@
 		84A7E598179F1836002CE6FD /* background-wrapper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-wrapper@2x.png"; sourceTree = "<group>"; };
 		84A7E59D179F4D5C002CE6FD /* cancel-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-button.png"; sourceTree = "<group>"; };
 		84A7E59E179F4D5C002CE6FD /* cancel-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-button@2x.png"; sourceTree = "<group>"; };
-		84A7E5A2179FCC84002CE6FD /* addPayment-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addPayment-button.png"; sourceTree = "<group>"; };
-		84A7E5A3179FCC84002CE6FD /* addPayment-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addPayment-button@2x.png"; sourceTree = "<group>"; };
-		84A7E5A6179FCDE2002CE6FD /* addPayment-button(active).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addPayment-button(active).png"; sourceTree = "<group>"; };
-		84A7E5A7179FCDE2002CE6FD /* addPayment-button(active)@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addPayment-button(active)@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +127,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840CAF3A17A8595D00843345 /* Add Payment Button */ = {
+			isa = PBXGroup;
+			children = (
+				840CAF3717A8595200843345 /* CFPAddPaymentViewController.h */,
+				840CAF3817A8595200843345 /* CFPAddPaymentViewController.m */,
+			);
+			name = "Add Payment Button";
+			sourceTree = "<group>";
+		};
+		840CAF6B17A9C34B00843345 /* Multiple Payment Flow */ = {
+			isa = PBXGroup;
+			children = (
+				840CAF6917A9C32300843345 /* MultipaymentStoryboard.storyboard */,
+				840CAF3A17A8595D00843345 /* Add Payment Button */,
+				84A7E58E179F14A8002CE6FD /* CFPViewController.h */,
+				84A7E58F179F14A8002CE6FD /* CFPViewController.m */,
+			);
+			name = "Multiple Payment Flow";
+			sourceTree = "<group>";
+		};
+		840CAF6C17A9C35C00843345 /* Recent Order Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				840CAF4617A88F1A00843345 /* RecentOrdersStoryboard.storyboard */,
+				840CAF6D17A9E43100843345 /* CFPRecentOrderViewController.h */,
+				840CAF6E17A9E43100843345 /* CFPRecentOrderViewController.m */,
+				841AA7BB17AB21620070858D /* Recent Order Information */,
+			);
+			name = "Recent Order Storyboard";
+			sourceTree = "<group>";
+		};
+		841AA7BB17AB21620070858D /* Recent Order Information */ = {
+			isa = PBXGroup;
+			children = (
+				841AA7B817AB215F0070858D /* CFPRecentOrderMasterInformationViewController.h */,
+				841AA7B917AB215F0070858D /* CFPRecentOrderMasterInformationViewController.m */,
+				841AA7BF17AB22200070858D /* Summary Information */,
+				841AA7C017AB2A750070858D /* Payment Information */,
+				841AA7C117AB2A7D0070858D /* Item Information */,
+				841AA7C217AB2A820070858D /* Options */,
+			);
+			name = "Recent Order Information";
+			sourceTree = "<group>";
+		};
+		841AA7BF17AB22200070858D /* Summary Information */ = {
+			isa = PBXGroup;
+			children = (
+				841AA7BC17AB221C0070858D /* CFPRecentOrderSummaryViewController.h */,
+				841AA7BD17AB221C0070858D /* CFPRecentOrderSummaryViewController.m */,
+			);
+			name = "Summary Information";
+			sourceTree = "<group>";
+		};
+		841AA7C017AB2A750070858D /* Payment Information */ = {
+			isa = PBXGroup;
+			children = (
+				841AA7C317AB2AAF0070858D /* CFPRecentOrderPaymentViewController.h */,
+				841AA7C417AB2AAF0070858D /* CFPRecentOrderPaymentViewController.m */,
+			);
+			name = "Payment Information";
+			sourceTree = "<group>";
+		};
+		841AA7C117AB2A7D0070858D /* Item Information */ = {
+			isa = PBXGroup;
+			children = (
+				841AA7C617AB2ABB0070858D /* CFPRecentOrderItemViewController.h */,
+				841AA7C717AB2ABB0070858D /* CFPRecentOrderItemViewController.m */,
+			);
+			name = "Item Information";
+			sourceTree = "<group>";
+		};
+		841AA7C217AB2A820070858D /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				841AA7C917AB2AC70070858D /* CFPRecentOrderOptionsViewController.h */,
+				841AA7CA17AB2AC70070858D /* CFPRecentOrderOptionsViewController.m */,
+			);
+			name = Options;
+			sourceTree = "<group>";
+		};
 		84A7E567179F14A8002CE6FD = {
 			isa = PBXGroup;
 			children = (
@@ -103,8 +241,10 @@
 				84A7E582179F14A8002CE6FD /* CFPAppDelegate.h */,
 				84A7E583179F14A8002CE6FD /* CFPAppDelegate.m */,
 				84A7E58B179F14A8002CE6FD /* MainStoryboard.storyboard */,
-				84A7E58E179F14A8002CE6FD /* CFPViewController.h */,
-				84A7E58F179F14A8002CE6FD /* CFPViewController.m */,
+				840CAF4317A865EE00843345 /* CFPMainMenuViewController.h */,
+				840CAF4417A865EE00843345 /* CFPMainMenuViewController.m */,
+				840CAF6C17A9C35C00843345 /* Recent Order Storyboard */,
+				840CAF6B17A9C34B00843345 /* Multiple Payment Flow */,
 				84A7E57A179F14A8002CE6FD /* Supporting Files */,
 			);
 			path = CheckoutFlowPrototype;
@@ -145,10 +285,25 @@
 		84A7E5A1179F4D62002CE6FD /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				84A7E5A6179FCDE2002CE6FD /* addPayment-button(active).png */,
-				84A7E5A7179FCDE2002CE6FD /* addPayment-button(active)@2x.png */,
-				84A7E5A2179FCC84002CE6FD /* addPayment-button.png */,
-				84A7E5A3179FCC84002CE6FD /* addPayment-button@2x.png */,
+				841AA7B517AB06F40070858D /* slidebuttonarrow.png */,
+				841AA7B317AAF0720070858D /* tableheadersectionbackground.png */,
+				840CAF6717A9C05000843345 /* buttonselectionhighlightimage.png */,
+				840CAF6117A9B88900843345 /* slidebarselectionimage.png */,
+				840CAF5F17A9B73700843345 /* swipebuttonbackground.png */,
+				840CAF5117A995E200843345 /* completedorders_icon.png */,
+				840CAF5217A995E200843345 /* completedorders_icon(active).png */,
+				840CAF5317A995E200843345 /* homebutton.png */,
+				840CAF5417A995E200843345 /* homebutton(active).png */,
+				840CAF5517A995E200843345 /* openorders_icon.png */,
+				840CAF5617A995E200843345 /* openorders_icon(active).png */,
+				840CAF4E17A89B2B00843345 /* magnifyingGlass.png */,
+				840CAF4C17A8938D00843345 /* searchBarBackgroundImage.png */,
+				840CAF4A17A8927C00843345 /* leftTableViewWrapper.png */,
+				840CAF4817A890CF00843345 /* headerBackgroundImage.png */,
+				840CAF3B17A85D5B00843345 /* addPayment-button.png */,
+				840CAF3C17A85D5B00843345 /* addPayment-button(active).png */,
+				840CAF3D17A85D5B00843345 /* addPayment-button(active)@2x.png */,
+				840CAF3E17A85D5B00843345 /* addPayment-button@2x.png */,
 				84A7E59D179F4D5C002CE6FD /* cancel-button.png */,
 				84A7E59E179F4D5C002CE6FD /* cancel-button@2x.png */,
 			);
@@ -216,10 +371,27 @@
 				84A7E59A179F1836002CE6FD /* background-wrapper@2x.png in Resources */,
 				84A7E59F179F4D5C002CE6FD /* cancel-button.png in Resources */,
 				84A7E5A0179F4D5C002CE6FD /* cancel-button@2x.png in Resources */,
-				84A7E5A4179FCC84002CE6FD /* addPayment-button.png in Resources */,
-				84A7E5A5179FCC84002CE6FD /* addPayment-button@2x.png in Resources */,
-				84A7E5A8179FCDE2002CE6FD /* addPayment-button(active).png in Resources */,
-				84A7E5A9179FCDE2002CE6FD /* addPayment-button(active)@2x.png in Resources */,
+				840CAF3F17A85D5B00843345 /* addPayment-button.png in Resources */,
+				840CAF4017A85D5B00843345 /* addPayment-button(active).png in Resources */,
+				840CAF4117A85D5B00843345 /* addPayment-button(active)@2x.png in Resources */,
+				840CAF4217A85D5B00843345 /* addPayment-button@2x.png in Resources */,
+				840CAF4717A88F1A00843345 /* RecentOrdersStoryboard.storyboard in Resources */,
+				840CAF4917A890CF00843345 /* headerBackgroundImage.png in Resources */,
+				840CAF4B17A8927C00843345 /* leftTableViewWrapper.png in Resources */,
+				840CAF4D17A8938D00843345 /* searchBarBackgroundImage.png in Resources */,
+				840CAF4F17A89B2B00843345 /* magnifyingGlass.png in Resources */,
+				840CAF5717A995E300843345 /* completedorders_icon.png in Resources */,
+				840CAF5817A995E300843345 /* completedorders_icon(active).png in Resources */,
+				840CAF5917A995E300843345 /* homebutton.png in Resources */,
+				840CAF5A17A995E300843345 /* homebutton(active).png in Resources */,
+				840CAF5B17A995E300843345 /* openorders_icon.png in Resources */,
+				840CAF5C17A995E300843345 /* openorders_icon(active).png in Resources */,
+				840CAF6017A9B73800843345 /* swipebuttonbackground.png in Resources */,
+				840CAF6217A9B88A00843345 /* slidebarselectionimage.png in Resources */,
+				840CAF6817A9C05100843345 /* buttonselectionhighlightimage.png in Resources */,
+				840CAF6A17A9C32300843345 /* MultipaymentStoryboard.storyboard in Resources */,
+				841AA7B417AAF0720070858D /* tableheadersectionbackground.png in Resources */,
+				841AA7B617AB06F40070858D /* slidebuttonarrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +405,14 @@
 				84A7E580179F14A8002CE6FD /* main.m in Sources */,
 				84A7E584179F14A8002CE6FD /* CFPAppDelegate.m in Sources */,
 				84A7E590179F14A8002CE6FD /* CFPViewController.m in Sources */,
+				840CAF3917A8595200843345 /* CFPAddPaymentViewController.m in Sources */,
+				840CAF4517A865EE00843345 /* CFPMainMenuViewController.m in Sources */,
+				840CAF6F17A9E43100843345 /* CFPRecentOrderViewController.m in Sources */,
+				841AA7BA17AB215F0070858D /* CFPRecentOrderMasterInformationViewController.m in Sources */,
+				841AA7BE17AB221C0070858D /* CFPRecentOrderSummaryViewController.m in Sources */,
+				841AA7C517AB2AAF0070858D /* CFPRecentOrderPaymentViewController.m in Sources */,
+				841AA7C817AB2ABB0070858D /* CFPRecentOrderItemViewController.m in Sources */,
+				841AA7CB17AB2AC70070858D /* CFPRecentOrderOptionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
