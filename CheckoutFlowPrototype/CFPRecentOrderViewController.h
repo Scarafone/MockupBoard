@@ -7,40 +7,32 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef enum {
-    NONE = 100,
-    SUMMARY = 101,
-    PAYMENTS = 102,
-    ITEMS = 103,
-    OPTIONS = 104
-}TAB_GROUP_BUTTON;
+#import "CFPRecentOrderMasterInformationViewController.h"
 
 
+
+typedef enum
+{
+    NAVI_HOME               = 50,
+    NAVI_OPEN_ORDERS        = 51,
+    NAVI_COMPLETED_ORDERS   = 52,
+    NAVI_ALL_ORDERS         = 53
+    
+}NAVIGATION_BUTTONS;
 
 @interface CFPRecentOrderViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *roTableView;
-@property (weak, nonatomic) IBOutlet UIScrollView *roScrollView;
 @property (weak, nonatomic) IBOutlet UIView *roContainerView;
+@property (weak, nonatomic) IBOutlet UILabel *roOrderTitleLabel;
 
-//Tab Group
-@property (weak, nonatomic) IBOutlet UIView *roTabGroupButtonView;
-@property (weak, nonatomic) IBOutlet UIButton *roTabGroupSummaryButton;
-@property (weak, nonatomic) IBOutlet UIButton *roTabGroupPaymentsButton;
-@property (weak, nonatomic) IBOutlet UIButton *roTabGroupItemsButton;
-@property (weak, nonatomic) IBOutlet UIButton *roTabGroupOptionsButton;
-@property (weak, nonatomic) IBOutlet UIImageView *roTabGroupSelectionArrow;
-
-- (IBAction)roDidPressTabGroupButton:(UIButton *)sender;
 
 //Navigation Filters
 @property (weak, nonatomic) IBOutlet UIButton *roNaviGroupOpenOrders;
 @property (weak, nonatomic) IBOutlet UIButton *roNaviGroupCompletedOrders;
 @property (weak, nonatomic) IBOutlet UIButton *roNaviGroupAllOrders;
+
 - (IBAction)roDidPressNaviGroupButton:(UIButton *)sender;
-
-
 - (IBAction)didPressHomeButton:(UIButton *)sender;
 
 @end

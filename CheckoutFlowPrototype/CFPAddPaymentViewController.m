@@ -43,8 +43,10 @@
 }
 
 - (IBAction)didPressAddPaymentButton:(UIButton *)sender {
+    [_delegate didPressAddPaymentButton:sender];
 }
 
 - (IBAction)didPressSplitPaymentButton:(UIButton *)sender {
+    [_delegate didPressSplitPaymentButton:sender];
 }
 @end

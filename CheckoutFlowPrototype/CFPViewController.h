@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CFPAddPaymentViewController.h"
+#import "CFPMasterPopoverViewController.h"
 
 typedef enum {
     NONE,       //Blank state safe mode
@@ -17,7 +19,7 @@ typedef enum {
 }CFFlowState;
 
 
-@interface CFPViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+@interface CFPViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,SPAddPaymentProtocol>
 
 //Properties
 @property (weak, nonatomic) IBOutlet UITableView *cfPaymentTableView;
@@ -29,6 +31,8 @@ typedef enum {
 
 - (IBAction)didPressCancelPaymentButton:(UIButton *)sender;
 
+- (IBAction)pressedMe:(UIButton *)sender;
+- (IBAction)noPressedMe:(UIButton *)sender;
 
 
 //Instance Methods

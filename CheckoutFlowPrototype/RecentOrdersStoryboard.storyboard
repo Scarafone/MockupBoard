@@ -86,7 +86,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qh1-SI-0gN">
+                            <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qh1-SI-0gN">
                                 <rect key="frame" x="34" y="22" width="86" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
@@ -103,7 +103,7 @@
                                     <action selector="didPressHomeButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="DQ5-eH-72n"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="s0w-ce-cCc">
+                            <button opaque="NO" tag="53" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="s0w-ce-cCc">
                                 <rect key="frame" x="293" y="22" width="84" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
@@ -116,14 +116,14 @@
                                 <state key="selected" image="completedorders_icon(active).png" backgroundImage="buttonselectionhighlightimage.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted" image="completedorders_icon(active).png" backgroundImage="buttonselectionhighlightimage.png">
+                                <state key="highlighted" image="'">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="roDidPressNaviGroupButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="JHq-Jw-SSu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9AC-vj-iWC">
+                            <button opaque="NO" tag="52" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9AC-vj-iWC">
                                 <rect key="frame" x="209" y="22" width="84" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
@@ -136,14 +136,14 @@
                                 <state key="selected" image="completedorders_icon(active).png" backgroundImage="buttonselectionhighlightimage.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted" image="completedorders_icon(active).png" backgroundImage="buttonselectionhighlightimage.png">
+                                <state key="highlighted" image="completedorders_icon.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="roDidPressNaviGroupButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="hhb-mf-W2E"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CAd-aF-kKk">
+                            <button opaque="NO" tag="51" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CAd-aF-kKk">
                                 <rect key="frame" x="125" y="22" width="84" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
@@ -156,13 +156,21 @@
                                 <state key="selected" image="openorders_icon(active).png" backgroundImage="buttonselectionhighlightimage.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted" image="openorders_icon(active).png" backgroundImage="buttonselectionhighlightimage.png">
+                                <state key="highlighted" image="openorders_icon.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="roDidPressNaviGroupButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="g3D-ON-mSa"/>
                                 </connections>
                             </button>
+                            <containerView contentMode="center" id="VfM-D1-yY9">
+                                <rect key="frame" x="404" y="78" width="600" height="669"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="dzI-dt-OPX" kind="embed" id="UeK-ZR-33N"/>
+                                </connections>
+                            </containerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="headerBackgroundImage.png" id="Sh6-UT-qwt">
                                 <rect key="frame" x="400" y="20" width="610" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -174,14 +182,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView contentMode="center" id="VfM-D1-yY9">
-                                <rect key="frame" x="404" y="79" width="600" height="669"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="dzI-dt-OPX" kind="embed" id="UVF-tr-pBt"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -192,12 +192,7 @@
                         <outlet property="roNaviGroupAllOrders" destination="s0w-ce-cCc" id="YBb-pB-anL"/>
                         <outlet property="roNaviGroupCompletedOrders" destination="9AC-vj-iWC" id="b7N-eD-5Iq"/>
                         <outlet property="roNaviGroupOpenOrders" destination="CAd-aF-kKk" id="g38-bK-3PL"/>
-                        <outlet property="roTabGroupButtonView" destination="mt3-WA-boA" id="Z3l-hk-v5H"/>
-                        <outlet property="roTabGroupItemsButton" destination="L4X-sC-PXh" id="z3f-Ib-wG9"/>
-                        <outlet property="roTabGroupOptionsButton" destination="Ppr-PO-16g" id="rCp-Jl-Tj2"/>
-                        <outlet property="roTabGroupPaymentsButton" destination="xZr-hs-ktA" id="mZr-Fv-isd"/>
-                        <outlet property="roTabGroupSelectionArrow" destination="OS1-XN-PIK" id="moN-e1-hHi"/>
-                        <outlet property="roTabGroupSummaryButton" destination="1ck-f0-5pQ" id="PUe-Vb-tgr"/>
+                        <outlet property="roOrderTitleLabel" destination="nbO-2T-nyT" id="V3Y-7M-9Tw"/>
                         <outlet property="roTableView" destination="5Ee-Vq-Rgp" id="ppW-r1-eJ6"/>
                     </connections>
                 </viewController>
@@ -208,115 +203,20 @@
         <!--Recent Order Master Information View Controller-->
         <scene sceneID="gKv-J8-apu">
             <objects>
-                <viewController id="dzI-dt-OPX" customClass="CFPRecentOrderMasterInformationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MasterInformationVC" id="dzI-dt-OPX" customClass="CFPRecentOrderMasterInformationViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4hU-EX-t7M">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="669"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="mt3-WA-boA">
+                            <view contentMode="scaleToFill" id="zRr-XE-3XU">
                                 <rect key="frame" x="0.0" y="0.0" width="599" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" id="zRr-XE-3XU">
-                                        <rect key="frame" x="0.0" y="0.0" width="599" height="78"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="swipebuttonbackground.png" id="Hvj-jf-8wF">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="58"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gLn-jj-Bo4">
-                                                <rect key="frame" x="150" y="-2" width="150" height="62"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                <inset key="titleEdgeInsets" minX="0.0" minY="-4" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Payments">
-                                                    <color key="titleColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="selected" backgroundImage="slidebarselectionimage.png">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted" backgroundImage="slidebarselectionimage.png">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="roDidPressTabGroupButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="ekQ-B2-qej"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2BC-ww-pTc">
-                                                <rect key="frame" x="0.0" y="-2" width="150" height="62"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                <inset key="titleEdgeInsets" minX="0.0" minY="-4" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Summary">
-                                                    <color key="titleColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="selected" backgroundImage="slidebarselectionimage.png">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted" backgroundImage="slidebarselectionimage.png">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="roDidPressTabGroupButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="3CH-eW-uyg"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vlm-Gb-Sdg">
-                                                <rect key="frame" x="300" y="-2" width="150" height="62"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                <inset key="titleEdgeInsets" minX="0.0" minY="-4" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Items">
-                                                    <color key="titleColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="selected" backgroundImage="slidebarselectionimage.png">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted" backgroundImage="slidebarselectionimage.png">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="roDidPressTabGroupButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="i5n-d9-b4M"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="l2c-TJ-szp">
-                                                <rect key="frame" x="450" y="-2" width="150" height="62"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                <inset key="titleEdgeInsets" minX="0.0" minY="-4" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Options">
-                                                    <color key="titleColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="selected" backgroundImage="slidebarselectionimage.png">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted" backgroundImage="slidebarselectionimage.png">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="roDidPressTabGroupButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="RXn-4M-O0O"/>
-                                                </connections>
-                                            </button>
-                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="slidebuttonarrow.png" id="m1P-z2-akK">
-                                                <rect key="frame" x="62" y="50" width="27" height="15"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="swipebuttonbackground.png" id="AUy-g3-1NR">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="swipebuttonbackground.png" id="Hvj-jf-8wF">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xZr-hs-ktA">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gLn-jj-Bo4">
                                         <rect key="frame" x="150" y="-2" width="150" height="62"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -328,15 +228,16 @@
                                         <state key="selected" backgroundImage="slidebarselectionimage.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <state key="highlighted" backgroundImage="slidebarselectionimage.png">
+                                        <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="roDidPressTabGroupButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="sdw-g3-Vpk"/>
+                                            <action selector="roDidPressTabGroupButton:" destination="dzI-dt-OPX" eventType="touchUpInside" id="9Vd-Mw-AN8"/>
+                                            <action selector="roDidPressTabGroupButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="ekQ-B2-qej"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1ck-f0-5pQ">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2BC-ww-pTc">
                                         <rect key="frame" x="0.0" y="-2" width="150" height="62"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -348,15 +249,16 @@
                                         <state key="selected" backgroundImage="slidebarselectionimage.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <state key="highlighted" backgroundImage="slidebarselectionimage.png">
+                                        <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="roDidPressTabGroupButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="ot8-4c-u7R"/>
+                                            <action selector="roDidPressTabGroupButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="3CH-eW-uyg"/>
+                                            <action selector="roDidPressTabGroupButton:" destination="dzI-dt-OPX" eventType="touchUpInside" id="ZNr-WE-mVK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L4X-sC-PXh">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vlm-Gb-Sdg">
                                         <rect key="frame" x="300" y="-2" width="150" height="62"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -368,15 +270,16 @@
                                         <state key="selected" backgroundImage="slidebarselectionimage.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <state key="highlighted" backgroundImage="slidebarselectionimage.png">
+                                        <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="roDidPressTabGroupButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="hvK-i0-V31"/>
+                                            <action selector="roDidPressTabGroupButton:" destination="dzI-dt-OPX" eventType="touchUpInside" id="bAo-6X-5ij"/>
+                                            <action selector="roDidPressTabGroupButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="i5n-d9-b4M"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ppr-PO-16g">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="l2c-TJ-szp">
                                         <rect key="frame" x="450" y="-2" width="150" height="62"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -388,15 +291,16 @@
                                         <state key="selected" backgroundImage="slidebarselectionimage.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <state key="highlighted" backgroundImage="slidebarselectionimage.png">
+                                        <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="roDidPressTabGroupButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="Jgl-vw-SdE"/>
+                                            <action selector="roDidPressTabGroupButton:" destination="KD8-AT-H8J" eventType="touchUpInside" id="RXn-4M-O0O"/>
+                                            <action selector="roDidPressTabGroupButton:" destination="dzI-dt-OPX" eventType="touchUpInside" id="b8J-qu-tED"/>
                                         </connections>
                                     </button>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="slidebuttonarrow.png" id="OS1-XN-PIK">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="slidebuttonarrow.png" id="m1P-z2-akK">
                                         <rect key="frame" x="62" y="50" width="27" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -404,7 +308,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" id="swV-xa-bRx">
-                                <rect key="frame" x="0.0" y="86" width="600" height="583"/>
+                                <rect key="frame" x="0.0" y="84" width="600" height="585"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </scrollView>
                         </subviews>
@@ -412,42 +316,304 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="roInformationScrollView" destination="swV-xa-bRx" id="KYc-DB-2Dy"/>
+                        <outlet property="roTabGroupButtonView" destination="zRr-XE-3XU" id="L0m-8Z-fDc"/>
+                        <outlet property="roTabGroupItemsButton" destination="vlm-Gb-Sdg" id="UdJ-pV-lEL"/>
+                        <outlet property="roTabGroupOptionsButton" destination="l2c-TJ-szp" id="W3G-3Q-paf"/>
+                        <outlet property="roTabGroupPaymentsButton" destination="gLn-jj-Bo4" id="bhy-R6-stB"/>
+                        <outlet property="roTabGroupSelectionArrow" destination="m1P-z2-akK" id="P2z-ph-f4S"/>
+                        <outlet property="roTabGroupSummaryButton" destination="2BC-ww-pTc" id="9Fa-O9-cFp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEg-of-i7y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="911" y="-157"/>
+            <point key="canvasLocation" x="891" y="-255"/>
         </scene>
         <!--Recent Order Summary View Controller-->
         <scene sceneID="J9h-p4-EGa">
             <objects>
                 <viewController storyboardIdentifier="SummaryPage" id="jix-IR-g0D" customClass="CFPRecentOrderSummaryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BDl-Aj-M3j">
-                        <rect key="frame" x="0.0" y="0.0" width="604" height="585"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="585"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="vAA-lM-KVl">
-                                <rect key="frame" x="0.0" y="0.0" width="604" height="585"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="572"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d4p-bL-gf6">
-                                    <size key="itemSize" width="500" height="412"/>
+                                    <size key="itemSize" width="500" height="540"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="summarycell" id="APC-3t-juu">
-                                        <rect key="frame" x="52" y="0.0" width="500" height="412"/>
+                                        <rect key="frame" x="50" y="0.0" width="500" height="540"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="500" height="412"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="500" height="540"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SZP-Of-Vxb">
+                                                    <rect key="frame" x="1" y="467" width="244" height="66"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Edit Order" backgroundImage="addPayment-button.png">
+                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted" backgroundImage="addPayment-button(active).png">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="g76-mk-UEL">
+                                                    <rect key="frame" x="255" y="467" width="244" height="66"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Checkout Order" backgroundImage="addPayment-button.png">
+                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted" backgroundImage="addPayment-button(active).png">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <view tag="103" contentMode="scaleToFill" id="hMB-UX-qzE">
+                                                    <rect key="frame" x="1" y="0.0" width="500" height="459"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="informationcardbackground.png" id="tDa-xo-ffb">
+                                                            <rect key="frame" x="0.0" y="0.0" width="500" height="459"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Order: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tse-qK-qY6">
+                                                            <rect key="frame" x="20" y="0.0" width="66" height="42"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="#10984" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hs8-8V-18x">
+                                                            <rect key="frame" x="94" y="0.0" width="153" height="42"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Status:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JsL-am-tSe">
+                                                            <rect key="frame" x="349" y="10" width="53" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Closed" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u61-Vf-JOs">
+                                                            <rect key="frame" x="411" y="10" width="62" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.72370990953947367" green="0.0085312597334873536" blue="0.034453435726159554" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="#19006" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VZ1-V3-aAY">
+                                                            <rect key="frame" x="416" y="50" width="57" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Jul 25, 2013 @ 9:34 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PKr-ZK-vi7">
+                                                            <rect key="frame" x="290" y="77" width="183" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Brent Scarafone" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tjb-Ln-MTy">
+                                                            <rect key="frame" x="350" y="113" width="123" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Jay Bird" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9g6-gN-fDd">
+                                                            <rect key="frame" x="411" y="142" width="62" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Jz-PQ-iGy">
+                                                            <rect key="frame" x="463" y="181" width="10" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lF6-gr-PM2">
+                                                            <rect key="frame" x="463" y="207" width="10" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$23.90" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="afe-hn-xyM">
+                                                            <rect key="frame" x="421" y="252" width="52" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lrZ-Zd-qZs">
+                                                            <rect key="frame" x="430" y="281" width="43" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$2.03" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AN6-YS-9NC">
+                                                            <rect key="frame" x="430" y="310" width="43" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$25.93" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wqS-ZL-J6D">
+                                                            <rect key="frame" x="350" y="350" width="123" height="29"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ticket:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1u9-R5-agq">
+                                                            <rect key="frame" x="20" y="50" width="51" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Created:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jku-8u-GeC">
+                                                            <rect key="frame" x="20" y="77" width="66" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Employee:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fMR-s0-sYa">
+                                                            <rect key="frame" x="20" y="113" width="81" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Customer:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jgC-hM-9dW">
+                                                            <rect key="frame" x="20" y="142" width="79" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Payments:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OIm-xu-c19">
+                                                            <rect key="frame" x="20" y="181" width="81" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Items:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zE4-fE-pwY">
+                                                            <rect key="frame" x="20" y="207" width="47" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Order Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fHj-Jp-RWJ">
+                                                            <rect key="frame" x="24" y="377" width="93" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Subtotal:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p04-ZS-D5s">
+                                                            <rect key="frame" x="284" y="252" width="68" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Discounts:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qkv-Cl-d4s">
+                                                            <rect key="frame" x="272" y="281" width="80" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tax:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tl4-lf-Uw3">
+                                                            <rect key="frame" x="318" y="310" width="34" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h8b-pR-Oga">
+                                                            <rect key="frame" x="272" y="350" width="80" height="29"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ayg-Bw-bAN">
+                                                            <rect key="frame" x="20" y="43" width="454" height="2"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.86145662010000001" green="0.86145662010000001" blue="0.86145662010000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fRc-dL-VAK">
+                                                            <rect key="frame" x="20" y="106" width="454" height="2"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.86145662010000001" green="0.86145662010000001" blue="0.86145662010000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3SS-Ql-ZIr">
+                                                            <rect key="frame" x="20" y="171" width="454" height="2"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.86145662010000001" green="0.86145662010000001" blue="0.86145662010000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="io3-BH-9Wy">
+                                                            <rect key="frame" x="20" y="237" width="454" height="2"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.86145662010000001" green="0.86145662010000001" blue="0.86145662010000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9w6-QH-cXY">
+                                                            <rect key="frame" x="20" y="340" width="454" height="2"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.86145662006578949" green="0.86145662006578949" blue="0.86145662006578949" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -464,18 +630,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yAg-cy-Fvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1551" y="-157"/>
+            <point key="canvasLocation" x="1558" y="-156"/>
         </scene>
         <!--Recent Order Payment View Controller-->
         <scene sceneID="3Ir-gi-Cnx">
             <objects>
                 <viewController storyboardIdentifier="PaymentPage" id="vUU-DZ-FDF" customClass="CFPRecentOrderPaymentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2SH-04-Rsa">
-                        <rect key="frame" x="0.0" y="0.0" width="604" height="585"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="585"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="u7h-s6-YeP">
-                                <rect key="frame" x="0.0" y="0.0" width="604" height="585"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NcQ-pD-cx6">
@@ -486,11 +652,17 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="summarycell" id="FJx-45-lfI">
-                                        <rect key="frame" x="39" y="0.0" width="526" height="412"/>
+                                        <rect key="frame" x="37" y="0.0" width="526" height="412"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="526" height="412"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="informationcardbackground.png" id="0ef-hT-dwr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="526" height="412"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="0.31791822829999999" green="0.64517231829999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -517,11 +689,11 @@
             <objects>
                 <viewController storyboardIdentifier="ItemPage" id="isY-zi-yB1" customClass="CFPRecentOrderItemViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G0q-cM-a46">
-                        <rect key="frame" x="0.0" y="0.0" width="604" height="585"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="585"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="SZn-rH-TlB">
-                                <rect key="frame" x="0.0" y="0.0" width="604" height="585"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k6a-9a-WtC">
@@ -532,11 +704,17 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="summarycell" id="zHD-hw-8oo">
-                                        <rect key="frame" x="39" y="0.0" width="526" height="412"/>
+                                        <rect key="frame" x="37" y="0.0" width="526" height="412"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="526" height="412"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="informationcardbackground.png" id="M0c-cn-AtN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="526" height="412"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="0.51340152763201963" green="1" blue="0.54507372173546431" alpha="1" colorSpace="calibratedRGB"/>
@@ -563,11 +741,11 @@
             <objects>
                 <viewController storyboardIdentifier="OptionsPage" id="Fbu-eR-5Vw" customClass="CFPRecentOrderOptionsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fvo-Nu-XGC">
-                        <rect key="frame" x="0.0" y="0.0" width="604" height="585"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="585"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="1eP-mO-Vve">
-                                <rect key="frame" x="0.0" y="0.0" width="604" height="585"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U62-d2-H5X">
@@ -578,11 +756,17 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="summarycell" id="T8O-fB-vyZ">
-                                        <rect key="frame" x="39" y="0.0" width="526" height="412"/>
+                                        <rect key="frame" x="37" y="0.0" width="526" height="412"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="526" height="412"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="informationcardbackground.png" id="uCo-Iw-OXu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="526" height="412"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.035793090471640809" alpha="1" colorSpace="calibratedRGB"/>
@@ -606,12 +790,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="'" width="16" height="16"/>
+        <image name="addPayment-button(active).png" width="721" height="125"/>
+        <image name="addPayment-button.png" width="721" height="125"/>
         <image name="buttonselectionhighlightimage.png" width="87" height="64"/>
         <image name="completedorders_icon(active).png" width="21" height="32"/>
         <image name="completedorders_icon.png" width="21" height="32"/>
         <image name="headerBackgroundImage.png" width="587" height="73"/>
         <image name="homebutton(active).png" width="33" height="31"/>
         <image name="homebutton.png" width="33" height="31"/>
+        <image name="informationcardbackground.png" width="540" height="480"/>
         <image name="leftTableViewWrapper.png" width="356" height="563"/>
         <image name="magnifyingGlass.png" width="20" height="26"/>
         <image name="openorders_icon(active).png" width="32" height="32"/>
@@ -631,7 +819,14 @@
         <class className="CFPRecentOrderMasterInformationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CFPRecentOrderMasterInformationViewController.h"/>
             <relationships>
+                <relationship kind="action" name="roDidPressTabGroupButton:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="roInformationScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="roTabGroupButtonView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="roTabGroupItemsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="roTabGroupOptionsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="roTabGroupPaymentsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="roTabGroupSelectionArrow" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="roTabGroupSummaryButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="CFPRecentOrderOptionsViewController" superclassName="UIViewController">
@@ -657,18 +852,11 @@
             <relationships>
                 <relationship kind="action" name="didPressHomeButton:" candidateClass="UIButton"/>
                 <relationship kind="action" name="roDidPressNaviGroupButton:" candidateClass="UIButton"/>
-                <relationship kind="action" name="roDidPressTabGroupButton:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="roContainerView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="roNaviGroupAllOrders" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="roNaviGroupCompletedOrders" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="roNaviGroupOpenOrders" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="roScrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="roTabGroupButtonView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="roTabGroupItemsButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="roTabGroupOptionsButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="roTabGroupPaymentsButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="roTabGroupSelectionArrow" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="roTabGroupSummaryButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="roOrderTitleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="roTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -680,6 +868,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

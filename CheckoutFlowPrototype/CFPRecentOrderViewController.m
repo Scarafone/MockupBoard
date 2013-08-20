@@ -11,6 +11,10 @@
 @interface CFPRecentOrderViewController () {
     
     BOOL _tabGroupIsShowing;
+    CFPRecentOrderMasterInformationViewController * _roMasterInformationViewController;
+    
+    NSMutableArray * _roNavigationButtonArray;
+    NAVIGATION_BUTTONS _roSelectedFilter;
     
 }
 
@@ -34,15 +38,21 @@
     [_roTableView setDelegate:self];
     [_roTableView setDataSource:self];
     
-    [_roTabGroupButtonView setHidden:YES];
+    //Hide the information container until requested
+    [_roContainerView setHidden:YES];
+
+    //Grab the navigation buttons in the view to make an array to be used for mutal exclusive
+    //tags 50 - 53 (Home(0),Open(1),Completed(2),All(3))
+    //Not grabbing home button
+    _roNavigationButtonArray = [@[]mutableCopy];
+    for(int i =51;i < 54;i++){
+        UIButton * button = (UIButton*)[self.view viewWithTag:i];
+        [_roNavigationButtonArray addObject:button];
     
-//    [_roScrollView setDelegate:self];
-//    [_roScrollView setContentSize:CGSizeMake(1500, 585)];
-    
-    
-//    CGRect mainframe = _roContainerView.frame;
-//    [_roContainerView setBounds:CGRectMake(mainframe.origin.x, mainframe.origin.y
-//                                          , 2000, mainframe.size.height)];
+        if(button.tag == NAVI_ALL_ORDERS){
+            [button setSelected:YES];
+        }
+    }
     
 
 }
@@ -65,7 +75,7 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 1;
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -126,56 +136,94 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"Selected cell @ %@ ",indexPath);
-    [self tabGroupIsShowing:YES];
+    [_roContainerView setHidden:NO];
+    [_roMasterInformationViewController shouldShowTabButtonGroup:YES];
+    
+    /* What to pass*/
+    [self createAndLoadMasterInformationVC:indexPath];
+    
 }
+
+
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self tabGroupIsShowing:NO];
+    [_roContainerView setHidden:YES];
+    [_roMasterInformationViewController shouldShowTabButtonGroup:NO];
+    
 }
 
-/* Animate Tab Group */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    //Should not happen
+    //Grab the view controller to be segued to for button control and response
+    _roMasterInformationViewController = (CFPRecentOrderMasterInformationViewController*)segue.destinationViewController;
+}
 
-- (void)tabGroupIsShowing:(BOOL)showing{
-
-    CGRect mainFrame = _roTabGroupButtonView.frame;
-    if(showing){
-        [_roTabGroupButtonView setHidden:NO];
-        _tabGroupIsShowing = YES;
-        mainFrame.origin.y = 76;
-        [_roTabGroupSummaryButton setSelected:YES];
-        [_roTabGroupSelectionArrow setHidden:NO];
-    } else {
-        mainFrame.origin.y = 22;
-        _tabGroupIsShowing = NO;
+- (void)createAndLoadMasterInformationVC:(id)something{
+    
+    if(!_roMasterInformationViewController){
+        _roMasterInformationViewController = (CFPRecentOrderMasterInformationViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"MasterInformationVC"];
     }
 
     
-    [UIView animateWithDuration:0.3
-                          delay:0.0
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         //Animation
-                         _roTabGroupButtonView.frame = mainFrame;
-                         if(!_tabGroupIsShowing){
-                             _roTabGroupButtonView.alpha = !_roTabGroupButtonView.alpha;
-                         } else {
-                             _roTabGroupButtonView.alpha = 1;
-                         }
-                     } completion:^(BOOL finished) {
-                         //Completion
-                         if(!_tabGroupIsShowing){
-                             [_roTabGroupButtonView setHidden:YES];
-                         }
-                     }];
+    
+    // Process Request Screen Layover HERE
+    /* Restkit block 
+     
+     * Send for order master object
+     * Order master object returns 
+     * send order master object to be displayed
+     
+     */
+
+    
+    [_roMasterInformationViewController setOrderObject:nil];//Pass order object to use
+    
+    
+    //Display loaded information
+    
+    [_roContainerView addSubview:_roMasterInformationViewController.view];
+    [self addChildViewController:_roMasterInformationViewController];
+    
+    //END SCREEN HERE
+    //[self screenEndingMethod];
+    
 }
 
-- (IBAction)roDidPressTabGroupButton:(UIButton *)sender {
-    NSLog(@"Did press tab button %@",sender);
-    [sender setSelected:!sender.selected];
-}
 
 - (IBAction)roDidPressNaviGroupButton:(UIButton *)sender {
-    NSLog(@"Did press navi button %@",sender);
+    
     [sender setSelected:!sender.selected];
+    
+    for(UIButton * button in _roNavigationButtonArray){
+        if(button.selected && button != sender){
+            button.selected = NO;
+        }
+        if(!button.selected && button == sender){
+            button.selected = YES;
+            _roSelectedFilter = sender.tag;
+        }
+    }
+    
+    [self filterListByType:sender.tag];
+
+}
+
+- (void)filterListByType:(NAVIGATION_BUTTONS)type{
+    
+    switch (type) {
+        case NAVI_OPEN_ORDERS:{
+            break;
+        }
+        case NAVI_COMPLETED_ORDERS:{
+            break;
+        }
+        case NAVI_ALL_ORDERS:{
+            break;
+        }
+        default:{
+            break;
+        }
+    }
+    
 }
 
 - (IBAction)didPressHomeButton:(UIButton *)sender {

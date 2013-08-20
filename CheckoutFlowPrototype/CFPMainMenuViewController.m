@@ -41,7 +41,10 @@
 - (IBAction)didPressMultiPaymentNaviButton:(UIButton *)sender {
     NSLog(@"Pressed mutli payment navi button");
     UIStoryboard * multiOrders = [UIStoryboard storyboardWithName:@"MultipaymentStoryboard" bundle:[NSBundle mainBundle]];
-    UIViewController * vc = [multiOrders instantiateInitialViewController];
+    CFPViewController * vc = (CFPViewController*)[multiOrders instantiateInitialViewController];
+    
+    [vc configureCheckoutFlowForOrder:nil withState:NEW];
+    
     [self.navigationController pushViewController:vc animated:YES];
 }
 

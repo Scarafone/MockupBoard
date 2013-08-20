@@ -8,9 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SPAddPaymentProtocol <NSObject>
+@required
+-(void)didPressAddPaymentButton:(UIButton*)sender;
+-(void)didPressSplitPaymentButton:(UIButton*)sender;
 
+@end
 
 @interface CFPAddPaymentViewController : UIViewController
+
+
+@property (weak, nonatomic) id <SPAddPaymentProtocol> delegate;
+
 @property (weak, nonatomic) IBOutlet UIButton *aAddPayButton;
 @property (weak, nonatomic) IBOutlet UIButton *aQuickSplitButton;
 
