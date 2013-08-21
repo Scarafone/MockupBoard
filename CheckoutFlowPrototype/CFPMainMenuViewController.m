@@ -30,7 +30,14 @@
 	// Do any additional setup after loading the view.
     [_aMultiPaymentButtonNavi setBackgroundImage:[[UIImage imageNamed:@"addPayment-button.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)] forState:UIControlStateNormal];
     [_aRecentOrderButtonNavi setBackgroundImage:[[UIImage imageNamed:@"addPayment-button.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)] forState:UIControlStateNormal];
+    
+    [_swipeRightGestureRecognizer setDelegate:self];
+    [_swipeRightGestureRecognizer setEnabled:YES];
+    
+    [_aView addGestureRecognizer:_swipeRightGestureRecognizer];
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -53,5 +60,73 @@
     UIStoryboard * recentOrders = [UIStoryboard storyboardWithName:@"RecentOrdersStoryboard" bundle:[NSBundle mainBundle]];
     UIViewController * vc = [recentOrders instantiateInitialViewController];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)didSwipeRight:(UISwipeGestureRecognizer *)sender {
+//    NSLog(@"Swipped Right! %@",sender);
+}
+
+
+/* Gesture Recognizer */
+
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+//    NSLog(@"GESTURE : \n %@ \n %@",gestureRecognizer,touch);
+    return YES;
+}
+
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+//    NSLog(@"GESTURE : \n %@ \n %@",gestureRecognizer,otherGestureRecognizer);
+    return YES;
+}
+
+-(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+//    NSLog(@"GESTURE : \n %@",gestureRecognizer);
+    return YES;
+}
+
+
+/* Touch Methods */
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+//    NSLog(@"Touch Began : \n %@,\n with event %@",touches,event);
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+//    NSLog(@"Touch Moved :\n %@, \n with event %@",touches,event);
+   /*
+    UITouch * touch = (UITouch*)[[touches allObjects]lastObject];
+    CGPoint point = [touch locationInView:self.view];
+    
+    CGRect frame = _aView.frame;
+    point.x -= _aView.frame.size.width/2 + touch.view.frame.origin.x;
+    point.y -= _aView.frame.size.height/2;
+    
+    frame.origin = point;
+    
+    
+    [UIView animateWithDuration:0.0
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         //Animation
+                         _aView.frame = frame;
+
+                     } completion:^(BOOL finished) {
+                         //Complete
+
+                     }];
+    */
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+//    NSLog(@"Touch Ended : \n %@, \n with event %@",touches,event);
+    CGRect frame = _aView.frame;
+    frame.origin = CGPointMake(0, 0);
+    [_aView setFrame:frame];
+}
+
+-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSLog(@"Touch Cancelled : \n %@, \n with event %@",touches,event);
 }
 @end
