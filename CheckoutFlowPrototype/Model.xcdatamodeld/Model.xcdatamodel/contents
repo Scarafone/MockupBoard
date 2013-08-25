@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="OrderSummary" syncable="YES">
+    <entity name="OrderMaster" representedClassName="OrderMaster" syncable="YES">
+        <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="companyID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="customerID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="kdsState" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastUpdate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="locationID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="orderDiscount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="orderFulfilled" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="orderMasterID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="orderState" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orderTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ticketNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userMasterID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="OrderSummary" representedClassName="OrderSummary" syncable="YES">
         <attribute name="company_name" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="companyID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
@@ -21,6 +39,7 @@
         <attribute name="userMasterID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="OrderSummary" positionX="-63" positionY="-18" width="128" height="313"/>
+        <element name="OrderSummary" positionX="-63" positionY="-18" width="128" height="330"/>
+        <element name="OrderMaster" positionX="160" positionY="192" width="128" height="285"/>
     </elements>
 </model>

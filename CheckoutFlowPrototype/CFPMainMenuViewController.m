@@ -8,6 +8,11 @@
 
 #import "CFPMainMenuViewController.h"
 #import "CFPViewController.h"
+#import "OrderMaster.h"
+
+@implementation LoginClass
+
+@end
 
 @interface CFPMainMenuViewController ()
 
@@ -27,6 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.managedObjectContext = [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
 	// Do any additional setup after loading the view.
     [_aMultiPaymentButtonNavi setBackgroundImage:[[UIImage imageNamed:@"addPayment-button.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)] forState:UIControlStateNormal];
     [_aRecentOrderButtonNavi setBackgroundImage:[[UIImage imageNamed:@"addPayment-button.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)] forState:UIControlStateNormal];
@@ -35,9 +42,98 @@
     [_swipeRightGestureRecognizer setEnabled:YES];
     
     [_aView addGestureRecognizer:_swipeRightGestureRecognizer];
+    
+    [self loginToServer];
+
 }
 
 
+-(void)loginToServer{
+
+    
+    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
+    
+    
+    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [mapping addAttributeMappingsFromDictionary:@{
+     @"data"    :   @"token",
+     @"endpoint":   @"endpoint",
+     @"success" :   @"success"
+     }];
+    
+    
+    RKRequestDescriptor * requestDescriptor  = [RKRequestDescriptor requestDescriptorWithMapping:mapping objectClass:[LoginClass class] rootKeyPath:nil method:RKRequestMethodGET];
+    RKResponseDescriptor * responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodGET pathPattern:@"rest.svc/api/login" keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [[RKObjectManager sharedManager]addRequestDescriptor:requestDescriptor];
+    [[RKObjectManager sharedManager]addResponseDescriptor:responseDescriptor];
+    
+    [[[RKObjectManager sharedManager]HTTPClient]setDefaultHeader:@"x-cube-email" value:@"mfalco@getcube.com"];
+    [[[RKObjectManager sharedManager]HTTPClient]setDefaultHeader:@"x-cube-password" value:@"whiskey"];
+    
+    [[RKObjectManager sharedManager]getObject:nil path:@"rest.svc/api/login" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        //Success
+        
+        NSLog(@"Success Login :%@ ",[mappingResult firstObject]);
+        NSDictionary * results = [mappingResult firstObject];
+        LoginClass * login = [LoginClass new];
+        
+        @try {
+            [login setValuesForKeysWithDictionary:results];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Unable to set login class with information");
+        }
+        @finally {
+            //Finally
+        }
+
+        
+        AFHTTPClient * client = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:login.endpoint]];
+        [RKObjectManager sharedManager].HTTPClient = client;
+        
+        [[[RKObjectManager sharedManager]HTTPClient]setDefaultHeader:@"x-cube-token" value:login.token];
+        
+        for(RKResponseDescriptor * response in  [RKObjectManager sharedManager].responseDescriptors){
+            response.baseURL  = [NSURL URLWithString:login.endpoint];
+        }
+     
+    
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        //Fail
+        NSLog(@"Failed Request :%@",error);
+        UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"Failed Login" message:@"Unable to login please check the informationa and try again" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alertView show];
+    }];
+    
+
+    
+}
+
+-(NSArray*)getOrderSummaryObjects{
+    
+
+   
+    
+//    RKResponseDescriptor * responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodGET pathPattern:@"/rest.svc/API/order_master" keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+//    responseDescriptor.baseURL = [RKObjectManager sharedManager].baseURL; 
+    
+//    [[RKObjectManager sharedManager]addResponseDescriptor:responseDescriptor];
+    
+    [[RKObjectManager sharedManager]getObjectsAtPath:@"/rest.svc/API/order_master" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        //Success
+        NSLog(@"Mapping Results : %@",mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        //Fail
+    }];
+    
+    return nil;
+}
+
+
+- (NSFetchedResultsController*)fetchedResultsController{
+    return _fetchedResultsController;
+}
 
 - (void)didReceiveMemoryWarning
 {

@@ -17,11 +17,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-wrapper.png" id="gW1-o6-N1n">
-                                        <rect key="frame" x="256" y="118" width="512" height="512"/>
+                                        <rect key="frame" x="20" y="20" width="512" height="512"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="C9x-Ok-2Sa">
-                                        <rect key="frame" x="737" y="133" width="18" height="19"/>
+                                        <rect key="frame" x="503" y="36" width="18" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal">
@@ -32,24 +32,38 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" alpha="0.30000000000000016" contentMode="scaleToFill" image="informationcardbackground.png" id="QHq-iL-ixG">
-                                        <rect key="frame" x="784" y="0.0" width="240" height="748"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SPy-qR-LxC">
+                                        <rect key="frame" x="804" y="20" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Recent Order" backgroundImage="paymentButton.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="paymentButton(active).png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="rhC-BY-OkB" appends="YES" id="R7X-v7-2d9"/>
+                                            <action selector="didPressRecentOrderButton:" destination="yGC-BX-KFH" eventType="touchUpInside" id="xXd-jo-XeK"/>
                                         </connections>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="ogT-bH-bv7">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="748"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6JI-Zk-9Bm">
+                                        <rect key="frame" x="804" y="228" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" alpha="0.60000000000000009" contentMode="scaleToFill" image="slidebuttonarrow.png" id="fcO-Os-LJH">
-                                        <rect key="frame" x="948" y="345" width="56" height="47"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Multiple Payments" backgroundImage="paymentButton.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="paymentButton(active).png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressMultiPaymentNaviButton:" destination="yGC-BX-KFH" eventType="touchUpInside" id="PBk-UA-ZwI"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.31791822829999999" green="0.64517231829999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93160569904776991" green="0.93579694492727483" blue="0.94837068256578949" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -95,8 +109,8 @@
     </scenes>
     <resources>
         <image name="background-wrapper.png" width="1024" height="748"/>
-        <image name="informationcardbackground.png" width="540" height="480"/>
-        <image name="slidebuttonarrow.png" width="27" height="15"/>
+        <image name="paymentButton(active).png" width="241" height="241"/>
+        <image name="paymentButton.png" width="241" height="241"/>
     </resources>
     <classes>
         <class className="CFPMainMenuViewController" superclassName="UIViewController">

@@ -41,6 +41,7 @@
 		841AA7C517AB2AAF0070858D /* CFPRecentOrderPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841AA7C417AB2AAF0070858D /* CFPRecentOrderPaymentViewController.m */; };
 		841AA7C817AB2ABB0070858D /* CFPRecentOrderItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841AA7C717AB2ABB0070858D /* CFPRecentOrderItemViewController.m */; };
 		841AA7CB17AB2AC70070858D /* CFPRecentOrderOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841AA7CA17AB2AC70070858D /* CFPRecentOrderOptionsViewController.m */; };
+		8461660C17C7E4AA00EF4A12 /* OrderMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461660B17C7E4AA00EF4A12 /* OrderMaster.m */; };
 		84A7E574179F14A8002CE6FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A7E573179F14A8002CE6FD /* UIKit.framework */; };
 		84A7E576179F14A8002CE6FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A7E575179F14A8002CE6FD /* Foundation.framework */; };
 		84A7E578179F14A8002CE6FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A7E577179F14A8002CE6FD /* CoreGraphics.framework */; };
@@ -105,6 +106,8 @@
 		841AA7C717AB2ABB0070858D /* CFPRecentOrderItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPRecentOrderItemViewController.m; sourceTree = "<group>"; };
 		841AA7C917AB2AC70070858D /* CFPRecentOrderOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPRecentOrderOptionsViewController.h; sourceTree = "<group>"; };
 		841AA7CA17AB2AC70070858D /* CFPRecentOrderOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPRecentOrderOptionsViewController.m; sourceTree = "<group>"; };
+		8461660A17C7E4A900EF4A12 /* OrderMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderMaster.h; sourceTree = "<group>"; };
+		8461660B17C7E4AA00EF4A12 /* OrderMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderMaster.m; sourceTree = "<group>"; };
 		84A7E570179F14A8002CE6FD /* CheckoutFlowPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckoutFlowPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A7E573179F14A8002CE6FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		84A7E575179F14A8002CE6FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -286,6 +289,8 @@
 				84A7E582179F14A8002CE6FD /* CFPAppDelegate.h */,
 				84A7E583179F14A8002CE6FD /* CFPAppDelegate.m */,
 				84B8C42C17C693130059EFDC /* Model.xcdatamodeld */,
+				8461660A17C7E4A900EF4A12 /* OrderMaster.h */,
+				8461660B17C7E4AA00EF4A12 /* OrderMaster.m */,
 				84A7E58B179F14A8002CE6FD /* MainStoryboard.storyboard */,
 				840CAF4317A865EE00843345 /* CFPMainMenuViewController.h */,
 				840CAF4417A865EE00843345 /* CFPMainMenuViewController.m */,
@@ -504,6 +509,7 @@
 				841AA7CB17AB2AC70070858D /* CFPRecentOrderOptionsViewController.m in Sources */,
 				84005AB017B1C7FC005B18C1 /* CFPMasterPopoverViewController.m in Sources */,
 				84B8C42E17C693130059EFDC /* Model.xcdatamodeld in Sources */,
+				8461660C17C7E4AA00EF4A12 /* OrderMaster.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,10 +597,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D50ED0BD5D9141D5825C77A3 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CheckoutFlowPrototype/CheckoutFlowPrototype-Prefix.pch";
 				INFOPLIST_FILE = "CheckoutFlowPrototype/CheckoutFlowPrototype-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -603,10 +611,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D50ED0BD5D9141D5825C77A3 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CheckoutFlowPrototype/CheckoutFlowPrototype-Prefix.pch";
 				INFOPLIST_FILE = "CheckoutFlowPrototype/CheckoutFlowPrototype-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

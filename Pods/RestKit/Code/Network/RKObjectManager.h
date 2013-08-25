@@ -294,7 +294,7 @@ RKMappingResult, RKRequestDescriptor, RKResponseDescriptor;
 /**
  The base URL of the underlying HTTP client.
  */
-@property (nonatomic, readonly) NSURL *baseURL;
+@property (nonatomic, copy) NSURL *baseURL;
 
 /**
  The default HTTP headers for all `NSURLRequest` objects constructed by the object manager.

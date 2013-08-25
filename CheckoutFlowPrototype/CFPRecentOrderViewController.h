@@ -20,7 +20,7 @@ typedef enum
     
 }NAVIGATION_BUTTONS;
 
-@interface CFPRecentOrderViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+@interface CFPRecentOrderViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,NSFetchedResultsControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *roTableView;
 @property (weak, nonatomic) IBOutlet UIView *roContainerView;

@@ -116,7 +116,7 @@
                                 <state key="selected" image="completedorders_icon(active).png" backgroundImage="buttonselectionhighlightimage.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted" image="'">
+                                <state key="highlighted" image="completedorders_icon.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -790,7 +790,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="'" width="16" height="16"/>
         <image name="addPayment-button(active).png" width="721" height="125"/>
         <image name="addPayment-button.png" width="721" height="125"/>
         <image name="buttonselectionhighlightimage.png" width="87" height="64"/>
@@ -809,70 +808,6 @@
         <image name="slidebuttonarrow.png" width="27" height="15"/>
         <image name="swipebuttonbackground.png" width="577" height="62"/>
     </resources>
-    <classes>
-        <class className="CFPRecentOrderItemViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CFPRecentOrderItemViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="roItemCollectionView" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="CFPRecentOrderMasterInformationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CFPRecentOrderMasterInformationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="roDidPressTabGroupButton:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="roInformationScrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="roTabGroupButtonView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="roTabGroupItemsButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="roTabGroupOptionsButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="roTabGroupPaymentsButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="roTabGroupSelectionArrow" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="roTabGroupSummaryButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="CFPRecentOrderOptionsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CFPRecentOrderOptionsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="roOptionsSelectionButton" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="CFPRecentOrderPaymentViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CFPRecentOrderPaymentViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="roPaymentCollectionView" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="CFPRecentOrderSummaryViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CFPRecentOrderSummaryViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="roSummaryCollectionView" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="CFPRecentOrderViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CFPRecentOrderViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="didPressHomeButton:" candidateClass="UIButton"/>
-                <relationship kind="action" name="roDidPressNaviGroupButton:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="roContainerView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="roNaviGroupAllOrders" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="roNaviGroupCompletedOrders" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="roNaviGroupOpenOrders" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="roOrderTitleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="roTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

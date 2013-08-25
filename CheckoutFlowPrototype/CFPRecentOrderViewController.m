@@ -8,6 +8,17 @@
 
 #import "CFPRecentOrderViewController.h"
 
+
+static void CFPShowAlertWithError(NSError *error)
+{
+    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Error"
+                                                    message:[error localizedDescription]
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Ok"
+                                          otherButtonTitles: nil];
+    [alert show];
+}
+
 @interface CFPRecentOrderViewController () {
     
     BOOL _tabGroupIsShowing;
@@ -16,7 +27,10 @@
     NSMutableArray * _roNavigationButtonArray;
     NAVIGATION_BUTTONS _roSelectedFilter;
     
+
 }
+
+@property (nonatomic, strong)NSFetchedResultsController * fetchedResultsController;
 
 @end
 
@@ -41,21 +55,65 @@
     //Hide the information container until requested
     [_roContainerView setHidden:YES];
 
-    //Grab the navigation buttons in the view to make an array to be used for mutal exclusive
-    //tags 50 - 53 (Home(0),Open(1),Completed(2),All(3))
-    //Not grabbing home button
+    /**
+    *   Grab the navigation buttons in the view to make an array to be used for mutal exclusive
+    *   tags 50 - 53 (Home(0),Open(1),Completed(2),All(3))
+    *   Not grabbing home button
+    */
+    
     _roNavigationButtonArray = [@[]mutableCopy];
+    
+    
+    
+    
+    /* Set the default button to be highligted*/
     for(int i =51;i < 54;i++){
         UIButton * button = (UIButton*)[self.view viewWithTag:i];
         [_roNavigationButtonArray addObject:button];
-    
-        if(button.tag == NAVI_ALL_ORDERS){
+        if(button.tag == NAVI_ALL_ORDERS)
             [button setSelected:YES];
-        }
     }
+    
+    
+    
+    
+    
+    NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"OrderMaster"];
+    NSSortDescriptor * descriptor = [NSSortDescriptor sortDescriptorWithKey:@"created" ascending:NO];
+    fetchRequest.sortDescriptors = @[descriptor];
+    NSError * error = nil;
+    
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc]initWithFetchRequest:fetchRequest
+                                                                  managedObjectContext:[RKManagedObjectStore defaultStore].mainQueueManagedObjectContext
+                                                                    sectionNameKeyPath:nil
+                                                                             cacheName:nil];
+    
+    [self.fetchedResultsController setDelegate:self];
+    BOOL fetchSuccessful = [self.fetchedResultsController performFetch:&error];
+    if(!fetchSuccessful){
+        CFPShowAlertWithError(error);
+    }
+    
+    [self loadData];
+    
     
 
 }
+
+- (void) loadData
+{
+    NSLog(@"Loading data...");
+    
+    [[RKObjectManager sharedManager]getObjectsAtPath:@"/rest.svc/API/order_master" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        //Success
+        NSLog(@"Success");
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        //Fail
+        CFPShowAlertWithError(error);
+    }];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

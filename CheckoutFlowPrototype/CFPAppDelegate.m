@@ -1,4 +1,4 @@
-//
+ //
 //  CFPAppDelegate.m
 //  CheckoutFlowPrototype
 //
@@ -7,6 +7,9 @@
 //
 
 #import "CFPAppDelegate.h"
+#import "OrderMaster.h"
+
+
 
 @implementation CFPAppDelegate
 
@@ -14,16 +17,69 @@
 {
     // Override point for customization after application launch.
     
-    NSError * error = nil;
+    NSURL * baseURL = [NSURL URLWithString:@"https://supervisor.getcube.com:65532/"];
+    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:baseURL];
+    
+    //Enable Activity Indicator Spinner
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+
+    
     NSURL *modelURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Model" ofType:@"momd"]];
+    
     NSManagedObjectModel *managedObjectModel = [[[NSManagedObjectModel alloc]initWithContentsOfURL:modelURL]mutableCopy];
     RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc]initWithManagedObjectModel:managedObjectModel];
     
+    objectManager.managedObjectStore = managedObjectStore;
+    
+    //Set up mappings
+    
+     RKEntityMapping * entityMapping = [RKEntityMapping mappingForEntityForName:@"OrderMaster" inManagedObjectStore:managedObjectStore];
+     [entityMapping addAttributeMappingsFromDictionary:@{
+     @"order_master_id"     : @"orderMasterID",
+     @"company_id"          : @"companyID",
+     @"location_id"         : @"locationID",
+     @"user_master_id"      : @"userMasterID",
+     @"first_name"          : @"firstName",
+     @"last_name"           : @"lastName",
+     @"customer_id"         : @"customerID",
+     @"ticket_number"       : @"ticketNumber",
+     @"order_title"         : @"orderTitle",
+     @"order_state"         : @"orderState",
+     @"kds_state"           : @"kdsState",
+     @"order_fulfilled"     : @"orderFulfilled",
+     @"order_discount"      : @"orderDiscount",
+     @"comments"            : @"comments",
+     @"created"             : @"created",
+     @"last_update"         : @"lastUpdate"
+     }];
+    
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:entityMapping
+                                                                                            method:RKRequestMethodGET
+                                                                                       pathPattern:@"/rest.svc/API/order_master"
+                                                                                           keyPath:@"data"
+                                                                                       statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:responseDescriptor];
+    
+    /* 
+     Complete Core Data Stack initialization
+     */
     [managedObjectStore createPersistentStoreCoordinator];
+    NSError * error = nil;
     NSPersistentStore __unused *persistentStore = [managedObjectStore addInMemoryPersistentStore:&error];
     NSAssert(persistentStore, @"Failed to add persistent store: %@",error);
     
+    //Configure Contexts
+    [managedObjectStore createManagedObjectContexts];
+    
+    //Set the default instance
     [RKManagedObjectStore setDefaultStore:managedObjectStore];
+    [RKObjectManager setSharedManager:objectManager];
+    
+    //Configure a managed object cache to ensure we do not create duplicate objects
+    managedObjectStore.managedObjectCache = [[RKInMemoryManagedObjectCache alloc]initWithManagedObjectContext:managedObjectStore.persistentStoreManagedObjectContext];
+    
+
+    
     
     return YES;
 }

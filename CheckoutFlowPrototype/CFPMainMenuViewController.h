@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CFPMainMenuViewController : UIViewController <UIGestureRecognizerDelegate>
+@interface CFPMainMenuViewController : UIViewController <UIGestureRecognizerDelegate,NSFetchedResultsControllerDelegate>
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @property (weak, nonatomic) IBOutlet UIButton *aMultiPaymentButtonNavi;
 @property (weak, nonatomic) IBOutlet UIButton *aRecentOrderButtonNavi;
@@ -21,5 +24,13 @@
 - (IBAction)didPressMultiPaymentNaviButton:(UIButton *)sender;
 - (IBAction)didPressRecentOrderButton:(UIButton *)sender;
 - (IBAction)didSwipeRight:(UISwipeGestureRecognizer *)sender;
+
+@end
+
+@interface LoginClass : NSObject
+
+@property (nonatomic, copy) NSString *token;
+@property (nonatomic, copy) NSString *endpoint;
+@property (nonatomic, copy) NSNumber *success;
 
 @end
