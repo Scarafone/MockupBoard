@@ -7,13 +7,18 @@
 //
 
 #import "CFPRecentOrderMasterInformationViewController.h"
+#import "CFPRecentOrderViewController.h"
 
 @interface CFPRecentOrderMasterInformationViewController () {
     CFPRecentOrderSummaryViewController * _summaryVC;
     CFPRecentOrderPaymentViewController * _paymentVC;
     CFPRecentOrderItemViewController    * _itemVC;
     CFPRecentOrderOptionsViewController * _optionsVC;
+
+
 }
+
+@property (strong, nonatomic) OrderDetailClass * orderDetail;
 
 @end
 
@@ -68,6 +73,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    
     [self updateTabButtonSelected:_roTabGroupSelectionArrow.frame];
 }
 
@@ -177,10 +183,26 @@
     
 }
 
-- (void) setOrderObject:(id)orderObject{
+- (void) setOrderObject:(OrderDetailClass*)orderObject{
     if(!orderObject){
-        NSLog(@"LOL");
+        NSLog(@"No Object Present!");
+    } else {
+        NSLog(@"Order Object : %@",orderObject);
+        [self setOrderDetailForChildViews:orderObject];
+        [_roInformationScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
     }
+}
+
+
+- (void) setOrderDetailForChildViews:(OrderDetailClass*)orderDetail{
+    
+    if(!orderDetail){
+        NSLog(@"There has been a problem!");
+        return;
+    }
+    [_summaryVC setDataForCollection:[orderDetail.data valueForKey:@"report_detail"]];
+    
+
 }
 
 @end

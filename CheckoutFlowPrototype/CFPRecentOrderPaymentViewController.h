@@ -11,4 +11,7 @@
 @interface CFPRecentOrderPaymentViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *roPaymentCollectionView;
 
+
+-(void)setDataForCollection:(NSArray*)data;
+
 @end

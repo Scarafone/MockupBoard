@@ -54,13 +54,93 @@
      }];
     
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:entityMapping
-                                                                                            method:RKRequestMethodGET
+                                                                                            method:RKRequestMethodPUT
                                                                                        pathPattern:@"/rest.svc/API/order_master"
                                                                                            keyPath:@"data"
                                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     [objectManager addResponseDescriptor:responseDescriptor];
     
-    /* 
+    
+    /* Order Item Mapping */
+    RKEntityMapping * orderItemEntityMapping = [RKEntityMapping mappingForEntityForName:@"OrderItem" inManagedObjectStore:managedObjectStore];
+    
+    [orderItemEntityMapping addAttributeMappingsFromDictionary:@{
+     @"active":                 @"active",
+     @"comments":               @"comments",
+     @"comp_reason":            @"comp_reason",
+     @"created":                @"created",
+     @"first_name":             @"first_name",
+     @"is_child":               @"is_child",
+     @"is_comp":                @"is_comp",
+     @"is_void":                @"is_void",
+     @"item_category_id":       @"item_category_id",
+     @"item_cost":              @"item_group_id",
+     @"item_id":                @"item_id",
+     @"item_name":              @"item_name",
+     @"item_price":             @"item_price",
+     @"kds_state":              @"kds_state",
+     @"last_name":              @"last_name",
+     @"last_update":            @"last_update",
+     @"line_amount":            @"line_amount",
+     @"line_discount":          @"line_discount_type",
+     @"line_total":             @"line_total",
+     @"location_id":            @"location_id",
+     @"order_item_id":          @"order_master_id",
+     @"parent_order_item_id":   @"parent_order_item_id",
+     @"quantity":               @"quantity",
+     @"tax_amount":             @"tax_amount",
+     @"tax_included":           @"tax_included",
+     
+     @"tax_rule_id_1":          @"tax_rule_id_1",
+     @"tax_rule_id_1_amount":   @"tax_rule_id_1_amount",
+     @"tax_rule_id_1_percent":  @"tax_rule_id_1_percent",
+     @"tax_rule_id_1_total":    @"tax_rule_id_1_total",
+     
+     @"tax_rule_id_2":          @"tax_rule_id_2",
+     @"tax_rule_id_2_amount":   @"tax_rule_id_2_amount",
+     @"tax_rule_id_2_percent":  @"tax_rule_id_2_percent",
+     @"tax_rule_id_2_total":    @"tax_rule_id_2_total",
+     
+     @"tax_rule_id_3":          @"tax_rule_id_3",
+     @"tax_rule_id_3_amount":   @"tax_rule_id_3_amount",
+     @"tax_rule_id_3_percent":  @"tax_rule_id_3_percent",
+     @"tax_rule_id_3_total":    @"tax_rule_id_3_total",
+     
+     @"tax_rule_id_4":          @"tax_rule_id_4",
+     @"tax_rule_id_4_amount":   @"tax_rule_id_4_amount",
+     @"tax_rule_id_4_percent":  @"tax_rule_id_4_percent",
+     @"tax_rule_id_4_total":    @"tax_rule_id_4_total",
+     
+     @"tax_rule_id_5":          @"tax_rule_id_5",
+     @"tax_rule_id_5_amount":   @"tax_rule_id_5_amount",
+     @"tax_rule_id_5_percent":  @"tax_rule_id_5_percent",
+     @"tax_rule_id_5_total":    @"tax_rule_id_5_total",
+     
+     @"tax_rule_id_6":          @"tax_rule_id_6",
+     @"tax_rule_id_6_amount":   @"tax_rule_id_6_amount",
+     @"tax_rule_id_6_percent":  @"tax_rule_id_6_percent",
+     @"tax_rule_id_6_total":    @"tax_rule_id_6_total",
+     
+     @"tax_rule_id_7":          @"tax_rule_id_7",
+     @"tax_rule_id_7_amount":   @"tax_rule_id_7_amount",
+     @"tax_rule_id_7_percent":  @"tax_rule_id_7_percent",
+     @"tax_rule_id_7_total":    @"tax_rule_id_7_total",
+     
+     @"tax_rule_id_8":          @"tax_rule_id_8",
+     @"tax_rule_id_8_amount":   @"tax_rule_id_8_amount",
+     @"tax_rule_id_8_percent":  @"tax_rule_id_8_percent",
+     @"tax_rule_id_8_total":    @"tax_rule_id_8_total",
+     
+     
+     @"user_master_id":         @"user_master_id",
+     @"void_reason":            @"void_reason"
+     
+     }];
+    
+    RKResponseDescriptor * orderItemResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:orderItemEntityMapping method:RKRequestMethodGET pathPattern:@"/rest.svc/API/order_item" keyPath:@"data" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [[RKObjectManager sharedManager]addResponseDescriptor:orderItemResponseDescriptor];
+
+    /*
      Complete Core Data Stack initialization
      */
     [managedObjectStore createPersistentStoreCoordinator];

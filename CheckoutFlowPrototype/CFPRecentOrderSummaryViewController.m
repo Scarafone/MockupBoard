@@ -7,10 +7,17 @@
 //
 
 #import "CFPRecentOrderSummaryViewController.h"
+#import "CFPSummaryCollectionViewCell.h"
 
 @interface CFPRecentOrderSummaryViewController () {
     UIView * _tempView;
 }
+
+@property (copy, nonatomic) NSDictionary    * summaryData;
+@property (copy, nonatomic) NSArray         * paymentArray;
+@property (copy, nonatomic) NSDictionary    * orderMasterDictionary;
+@property (copy, nonatomic) NSArray         * orderItemArray;
+@property (copy, nonatomic) NSDictionary    * customerDictionary;
 
 @end
 
@@ -31,13 +38,33 @@
 	// Do any additional setup after loading the view.
     [_roSummaryCollectionView setDelegate:self];
     [_roSummaryCollectionView setDataSource:self];
+    
+    [self.view setHidden:YES];
 
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    self.summaryData = nil;//Clear old data
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setDataForCollection:(NSArray *)data{
+    
+    self.summaryData            = [data objectAtIndex:0];
+    self.orderItemArray         = [self.summaryData objectForKey:@"order_item_entry_list"];
+    self.paymentArray           = [self.summaryData objectForKey:@"payment_list"];
+    self.orderMasterDictionary  = [self.summaryData objectForKey:@"order_master"];
+    self.customerDictionary     = [self.summaryData objectForKey:@"customer"];
+    
+    
+    
+    [self.view setHidden:NO];
+    [_roSummaryCollectionView reloadData];
 }
 
 
@@ -53,23 +80,47 @@
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"summarycell" forIndexPath:indexPath];
-    
-    UIButton * edit_order_button = (UIButton*)[cell viewWithTag:101];//101 edit order
-    UIButton * checkout_order_button = (UIButton*)[cell viewWithTag:102];//102 checkout order
-
-    
-    
-    if(!true){//If open order buttons will need to be visible other wise they will be hidden
-        [edit_order_button setHidden:NO];
-        [checkout_order_button setHidden:NO];
-    } else {
-        [edit_order_button setHidden:YES];
-        [checkout_order_button setHidden:YES];
+    CFPSummaryCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"summarycell" forIndexPath:indexPath];
+    // No data to display
+    if(!self.summaryData){
+        return cell;
     }
     
+    UIButton * edit_order_button = (UIButton*)[cell viewWithTag:121];
+    UIButton * checkout_order_button = (UIButton*)[cell viewWithTag:122];
+    
+    [edit_order_button addTarget:self action:@selector(didPressButton:) forControlEvents:UIControlEventTouchUpInside];
+    [checkout_order_button addTarget:self action:@selector(didPressButton:) forControlEvents:UIControlEventTouchUpInside];
 
+    
+    if([[self.orderMasterDictionary valueForKey:@"order_state"]isEqualToString:@"open"]){//If open order buttons will need to be visible other wise they will be hidden
+        [cell shouldShowOptions:YES];
+        [cell.orderState setTextColor:[UIColor greenColor]];
+    } else {
+        [cell shouldShowOptions:NO];
+        [cell.orderState setTextColor:[UIColor redColor]];
+    }
+    
+    cell.orderMasterID.text     = [NSString stringWithFormat:@"#%@",[self.orderMasterDictionary valueForKey:@"order_master_id"]];
+    cell.orderState.text        = [[NSString stringWithFormat:@"%@",[self.orderMasterDictionary valueForKey:@"order_state"]]uppercaseString];
+    cell.ticketNumber.text      = [NSString stringWithFormat:@"%@", [self.orderMasterDictionary valueForKey:@"ticket_number"]];
+    cell.created.text           = [NSString stringWithFormat:@"%@", [self.orderMasterDictionary valueForKey:@"created"]];
+    cell.employeeName.text      = [NSString stringWithFormat:@"%@ %@",[self.orderMasterDictionary valueForKey:@"first_name"],[self.orderMasterDictionary valueForKey:@"last_name"]];
+    if((NSNull*)self.customerDictionary != [NSNull null]){
+        cell.customerName.text  = [NSString stringWithFormat:@"%@ %@",[self.customerDictionary valueForKey:@"first_name"],[self.customerDictionary valueForKey:@"last_name"]];
+    } else {
+        cell.customerName.text  = @"";
+    }
+    cell.numberOfPayments.text  = [NSString stringWithFormat:@"%i",self.paymentArray.count];
+    cell.numberOfItems.text = [NSString stringWithFormat:@"%@",[self.summaryData valueForKey:@"item_count"]];
+    cell.subtotal.text      = [NSString stringWithFormat:@"$%@",[self.summaryData valueForKey:@"amount_subtotal"]];
+    cell.discounts.text     = [NSString stringWithFormat:@"$%@",[self.summaryData valueForKey:@"amount_discount"]];
+    cell.tax.text           = [NSString stringWithFormat:@"$%@",[self.summaryData valueForKey:@"amount_tax"]];
+    cell.tips.text          = [NSString stringWithFormat:@"$%@",[self.summaryData valueForKey:@"amount_tip"]];
+    cell.total.text         = [NSString stringWithFormat:@"$%@",[self.summaryData valueForKey:@"amount_total"]];
+    cell.notes.text         = [NSString stringWithFormat:@"%@",[self.orderMasterDictionary valueForKey:@"comments"]];
     return cell;
+    
     
 }
 
@@ -78,47 +129,20 @@
     //Grab the view
     _tempView = (UIView*)[collectionView viewWithTag:103];
     
-    //Zoom on that cell
-    [self shouldZoom:YES CellAtIndexPath:indexPath];
 
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
 
-    [self shouldZoom:NO CellAtIndexPath:indexPath];
+
     _tempView = nil;
 }
 
-- (void)shouldZoom:(BOOL)on CellAtIndexPath:(NSIndexPath*)indexPath{
+#pragma mark - Collection View Actions
 
+-(void)didPressButton:(UIButton*)sender{
+    NSLog(@"Pressed button : %@",sender);
     
-    CGRect mainFrame = _tempView.frame;
-    
-    if(on){
-//        mainFrame.size.height *=2;
-//        mainFrame.size.width  *=2;
-        
-//        mainFrame.origin.x -= mainFrame.size.width / 2;
-//        mainFrame.origin.y -= mainFrame.size.height / 2;
-    } else {
-//        mainFrame.size.height /=2;
-//        mainFrame.size.width  /=2;
-        
-//        mainFrame.origin.x += mainFrame.size.width;
-//        mainFrame.origin.y += mainFrame.size.height;
-    }
-
-    
-    
-    [UIView animateWithDuration:0.3
-                          delay:0.0
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         //Animations
-                         _tempView.frame = mainFrame;
-                     } completion:^(BOOL finished) {
-                         //Completion
-                     }];
 }
 
 

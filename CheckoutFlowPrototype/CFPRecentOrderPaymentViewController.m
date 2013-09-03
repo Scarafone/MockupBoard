@@ -10,6 +10,8 @@
 
 @interface CFPRecentOrderPaymentViewController ()
 
+@property (copy, nonatomic) NSArray * paymentArray;
+
 @end
 
 @implementation CFPRecentOrderPaymentViewController
@@ -37,6 +39,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setDataForCollection:(NSArray *)data{
+    self.paymentArray = data;
+    [self.roPaymentCollectionView reloadData];
+}
+
 
 /* Collection View Delegate and Datasource */
 
@@ -45,12 +52,12 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 2;
+    return self.paymentArray.count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"summarycell" forIndexPath:indexPath];
+    UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"paymentCellCredit" forIndexPath:indexPath];
     
     return cell;
     

@@ -36,3 +36,11 @@ typedef enum
 - (IBAction)didPressHomeButton:(UIButton *)sender;
 
 @end
+
+
+@interface OrderDetailClass : NSObject
+
+@property (nonatomic, copy) NSDictionary * data;
+@property (nonatomic, copy) NSString * success;
+
+@end

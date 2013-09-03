@@ -41,6 +41,8 @@
 		841AA7C517AB2AAF0070858D /* CFPRecentOrderPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841AA7C417AB2AAF0070858D /* CFPRecentOrderPaymentViewController.m */; };
 		841AA7C817AB2ABB0070858D /* CFPRecentOrderItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841AA7C717AB2ABB0070858D /* CFPRecentOrderItemViewController.m */; };
 		841AA7CB17AB2AC70070858D /* CFPRecentOrderOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841AA7CA17AB2AC70070858D /* CFPRecentOrderOptionsViewController.m */; };
+		842B1E7417CC39BD00A19518 /* CFPSummaryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B1E7317CC39BD00A19518 /* CFPSummaryCollectionViewCell.m */; };
+		843BE8BB17CB2ED50032B8E2 /* OrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 843BE8BA17CB2ED50032B8E2 /* OrderItem.m */; };
 		8461660C17C7E4AA00EF4A12 /* OrderMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461660B17C7E4AA00EF4A12 /* OrderMaster.m */; };
 		84A7E574179F14A8002CE6FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A7E573179F14A8002CE6FD /* UIKit.framework */; };
 		84A7E576179F14A8002CE6FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A7E575179F14A8002CE6FD /* Foundation.framework */; };
@@ -106,6 +108,10 @@
 		841AA7C717AB2ABB0070858D /* CFPRecentOrderItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPRecentOrderItemViewController.m; sourceTree = "<group>"; };
 		841AA7C917AB2AC70070858D /* CFPRecentOrderOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPRecentOrderOptionsViewController.h; sourceTree = "<group>"; };
 		841AA7CA17AB2AC70070858D /* CFPRecentOrderOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPRecentOrderOptionsViewController.m; sourceTree = "<group>"; };
+		842B1E7217CC39BD00A19518 /* CFPSummaryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPSummaryCollectionViewCell.h; sourceTree = "<group>"; };
+		842B1E7317CC39BD00A19518 /* CFPSummaryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPSummaryCollectionViewCell.m; sourceTree = "<group>"; };
+		843BE8B917CB2ED50032B8E2 /* OrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderItem.h; sourceTree = "<group>"; };
+		843BE8BA17CB2ED50032B8E2 /* OrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderItem.m; sourceTree = "<group>"; };
 		8461660A17C7E4A900EF4A12 /* OrderMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderMaster.h; sourceTree = "<group>"; };
 		8461660B17C7E4AA00EF4A12 /* OrderMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderMaster.m; sourceTree = "<group>"; };
 		84A7E570179F14A8002CE6FD /* CheckoutFlowPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckoutFlowPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +218,7 @@
 		841AA7BF17AB22200070858D /* Summary Information */ = {
 			isa = PBXGroup;
 			children = (
+				842B1E7117CC399F00A19518 /* Summary Collection View Cell */,
 				841AA7BC17AB221C0070858D /* CFPRecentOrderSummaryViewController.h */,
 				841AA7BD17AB221C0070858D /* CFPRecentOrderSummaryViewController.m */,
 			);
@@ -221,6 +228,7 @@
 		841AA7C017AB2A750070858D /* Payment Information */ = {
 			isa = PBXGroup;
 			children = (
+				84FE76E717CD3C8A00BAD316 /* Payment Collection View Cell */,
 				841AA7C317AB2AAF0070858D /* CFPRecentOrderPaymentViewController.h */,
 				841AA7C417AB2AAF0070858D /* CFPRecentOrderPaymentViewController.m */,
 			);
@@ -243,6 +251,15 @@
 				841AA7CA17AB2AC70070858D /* CFPRecentOrderOptionsViewController.m */,
 			);
 			name = Options;
+			sourceTree = "<group>";
+		};
+		842B1E7117CC399F00A19518 /* Summary Collection View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				842B1E7217CC39BD00A19518 /* CFPSummaryCollectionViewCell.h */,
+				842B1E7317CC39BD00A19518 /* CFPSummaryCollectionViewCell.m */,
+			);
+			name = "Summary Collection View Cell";
 			sourceTree = "<group>";
 		};
 		84583A1917C3EE320055F30D /* RestkitHandler */ = {
@@ -289,6 +306,8 @@
 				84A7E582179F14A8002CE6FD /* CFPAppDelegate.h */,
 				84A7E583179F14A8002CE6FD /* CFPAppDelegate.m */,
 				84B8C42C17C693130059EFDC /* Model.xcdatamodeld */,
+				843BE8B917CB2ED50032B8E2 /* OrderItem.h */,
+				843BE8BA17CB2ED50032B8E2 /* OrderItem.m */,
 				8461660A17C7E4A900EF4A12 /* OrderMaster.h */,
 				8461660B17C7E4AA00EF4A12 /* OrderMaster.m */,
 				84A7E58B179F14A8002CE6FD /* MainStoryboard.storyboard */,
@@ -363,6 +382,13 @@
 				84A7E59E179F4D5C002CE6FD /* cancel-button@2x.png */,
 			);
 			name = Buttons;
+			sourceTree = "<group>";
+		};
+		84FE76E717CD3C8A00BAD316 /* Payment Collection View Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Payment Collection View Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,6 +536,8 @@
 				84005AB017B1C7FC005B18C1 /* CFPMasterPopoverViewController.m in Sources */,
 				84B8C42E17C693130059EFDC /* Model.xcdatamodeld in Sources */,
 				8461660C17C7E4AA00EF4A12 /* OrderMaster.m in Sources */,
+				843BE8BB17CB2ED50032B8E2 /* OrderItem.m in Sources */,
+				842B1E7417CC39BD00A19518 /* CFPSummaryCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

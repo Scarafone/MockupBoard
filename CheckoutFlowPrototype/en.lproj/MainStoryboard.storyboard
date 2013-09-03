@@ -112,21 +112,6 @@
         <image name="paymentButton(active).png" width="241" height="241"/>
         <image name="paymentButton.png" width="241" height="241"/>
     </resources>
-    <classes>
-        <class className="CFPMainMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CFPMainMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="didPressMultiPaymentNaviButton:" candidateClass="UIButton"/>
-                <relationship kind="action" name="didPressRecentOrderButton:" candidateClass="UIButton"/>
-                <relationship kind="action" name="didSwipeRight:" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="aImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="aMultiPaymentButtonNavi" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="aRecentOrderButtonNavi" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="aView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="swipeRightGestureRecognizer" candidateClass="UISwipeGestureRecognizer"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -4,42 +4,55 @@
    version = "1.0">
    <FileBreakpoints>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "CheckoutFlowPrototype/CFPMainMenuViewController.m"
-         timestampString = "399084965.22737"
+         filePath = "CheckoutFlowPrototype/CFPRecentOrderViewController.m"
+         timestampString = "399259004.337962"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "124"
-         endingLineNumber = "124"
-         landmarkName = "-getOrderSummaryObjects"
+         startingLineNumber = "365"
+         endingLineNumber = "365"
+         landmarkName = "-createAndLoadMasterInformationVC:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "CheckoutFlowPrototype/CFPMainMenuViewController.m"
-         timestampString = "399084965.22737"
+         filePath = "CheckoutFlowPrototype/CFPRecentOrderMasterInformationViewController.m"
+         timestampString = "399258096.21184"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "127"
-         endingLineNumber = "127"
-         landmarkName = "-getOrderSummaryObjects"
+         startingLineNumber = "200"
+         endingLineNumber = "200"
+         landmarkName = "-setOrderDetailForChildViews:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "CheckoutFlowPrototype/CFPMainMenuViewController.m"
-         timestampString = "399084965.22737"
+         filePath = "CheckoutFlowPrototype/CFPRecentOrderSummaryViewController.m"
+         timestampString = "399280555.667842"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "135"
-         endingLineNumber = "135"
-         landmarkName = "-fetchedResultsController"
+         startingLineNumber = "108"
+         endingLineNumber = "108"
+         landmarkName = "-collectionView:cellForItemAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CheckoutFlowPrototype/CFPRecentOrderSummaryViewController.m"
+         timestampString = "399280311.114283"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "64"
+         endingLineNumber = "64"
+         landmarkName = "-setDataForCollection:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

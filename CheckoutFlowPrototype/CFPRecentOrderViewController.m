@@ -7,6 +7,9 @@
 //
 
 #import "CFPRecentOrderViewController.h"
+#import "OrderMaster.h"
+
+
 
 
 static void CFPShowAlertWithError(NSError *error)
@@ -19,18 +22,22 @@ static void CFPShowAlertWithError(NSError *error)
     [alert show];
 }
 
+@implementation OrderDetailClass
+@end
+
 @interface CFPRecentOrderViewController () {
     
     BOOL _tabGroupIsShowing;
-    CFPRecentOrderMasterInformationViewController * _roMasterInformationViewController;
-    
-    NSMutableArray * _roNavigationButtonArray;
-    NAVIGATION_BUTTONS _roSelectedFilter;
-    
+
+    NSMutableArray      * _roNavigationButtonArray;
+    NAVIGATION_BUTTONS    _roSelectedFilter;
+
+    CFPRecentOrderMasterInformationViewController   * _roMasterInformationViewController;
 
 }
 
 @property (nonatomic, strong)NSFetchedResultsController * fetchedResultsController;
+@property (nonatomic, strong)UITableViewController      * tableViewController;
 
 @end
 
@@ -66,16 +73,14 @@ static void CFPShowAlertWithError(NSError *error)
     
     
     
-    /* Set the default button to be highligted*/
+    /* Set the default button to be highligted */
+    
     for(int i =51;i < 54;i++){
         UIButton * button = (UIButton*)[self.view viewWithTag:i];
         [_roNavigationButtonArray addObject:button];
         if(button.tag == NAVI_ALL_ORDERS)
             [button setSelected:YES];
     }
-    
-    
-    
     
     
     NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"OrderMaster"];
@@ -94,6 +99,18 @@ static void CFPShowAlertWithError(NSError *error)
     if(!fetchSuccessful){
         CFPShowAlertWithError(error);
     }
+   
+    
+    self.tableViewController = [[UITableViewController alloc]init];
+    self.tableViewController.tableView = self.roTableView;
+    
+    
+    UIRefreshControl * refreshControl = [UIRefreshControl new];
+    [refreshControl addTarget:self action:@selector(loadData) forControlEvents:UIControlEventValueChanged];
+    self.tableViewController.refreshControl = refreshControl;
+
+    
+    [self.tableViewController.refreshControl beginRefreshing];
     
     [self loadData];
     
@@ -105,13 +122,85 @@ static void CFPShowAlertWithError(NSError *error)
 {
     NSLog(@"Loading data...");
     
+    /* 
+     Load data for just today
+     */
+
+
+    [[RKObjectManager sharedManager] setRequestSerializationMIMEType:RKMIMETypeJSON];
+    
+    [[[RKObjectManager sharedManager]defaultHeaders]setValue:@"application/json" forKey:@"Content-Type"];
+    [[[RKObjectManager sharedManager]defaultHeaders]setValue:@"application/json" forKey:@"x-cube-encoding"];
+    //NSError * error = nil;
+    //NSData * jsonData = [NSJSONSerialization dataWithJSONObject:searchFilterArray
+      //                                                  options:0
+        //                                                  error:&error];
+    
+    /*
+    NSString *JSONString;
+    if(!jsonData){
+        NSLog(@"Error : %@",error);
+    } else {
+        JSONString = [[NSString alloc] initWithBytes:[jsonData bytes] length:[jsonData length] encoding:NSUTF8StringEncoding];
+        NSLog(@"JSON OUTPUT: %@",JSONString);
+    }
+     */
+    
+
+
+    
+    //NSDictionary *myDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    
+   /* 
+        Multiple Calls for orders, pull in completed order from the current day unless other with specified
+        pull in all open orders
+    */
+    
+    NSArray * parameters = [NSArray arrayWithObjects:@{
+                            //Data Condition
+                            @"field":@"created",
+                            @"condition":@"greater_than",
+                            @"value":@"08/25/2013"},
+                            nil];
+    [[RKObjectManager sharedManager]putObject:nil path:@"/rest.svc/API/order_master" parameters:(NSDictionary*)parameters success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        //Success
+        [self.tableViewController.refreshControl endRefreshing];
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        //Fail
+        [self.tableViewController.refreshControl endRefreshing];
+        CFPShowAlertWithError(error);
+    }];
+    
+    NSArray * openParameters = [NSArray arrayWithObjects:@{
+                            //Data Condition
+                            @"field":@"order_state",
+                            @"condition":@"equals",
+                            @"value":@"open"},
+                            nil];
+    [[RKObjectManager sharedManager]putObject:nil path:@"/rest.svc/API/order_master" parameters:(NSDictionary*)openParameters success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        //Success
+        [self.tableViewController.refreshControl endRefreshing];
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        //Fail
+        [self.tableViewController.refreshControl endRefreshing];
+        CFPShowAlertWithError(error);
+    }];
+    
+    
+ 
+    /*
     [[RKObjectManager sharedManager]getObjectsAtPath:@"/rest.svc/API/order_master" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         //Success
         NSLog(@"Success");
+        [self.tableViewController.refreshControl endRefreshing];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         //Fail
+        [self.tableViewController.refreshControl endRefreshing];
         CFPShowAlertWithError(error);
     }];
+
+    */ 
+
 }
 
 
@@ -125,7 +214,8 @@ static void CFPShowAlertWithError(NSError *error)
 /* Table view Datasource Delegate methods */
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    id<NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController.sections objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index{
@@ -171,23 +261,27 @@ static void CFPShowAlertWithError(NSError *error)
     UILabel * time_date_label = (UILabel *)[cell viewWithTag:2];
     UILabel * price_label = (UILabel *)[cell viewWithTag:3];
     UILabel * status_label = (UILabel *)[cell viewWithTag:4];
+   
+    OrderMaster *orderMaster = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     NSDateFormatter * format = [[NSDateFormatter alloc]init];
     [format setDateFormat:@"hh:mm a"];
-    NSDate * date = [NSDate date];
+    NSDate * date = orderMaster.created;
     NSString * date_string = [format stringFromDate:date];
     
+
     
-    [order_label setText:@"Order # 100000"];
+    [order_label setText:[NSString stringWithFormat:@"Order #%@",orderMaster.orderMasterID.stringValue]];
     [time_date_label setText:date_string];
-    [price_label setText:@"$100.00"];
     
-    if(true){//Determine the color of the status label depending on the order_state
+    [price_label setText:orderMaster.ticketNumber != nil ? [NSString stringWithFormat:@"Ticket #%@",orderMaster.ticketNumber]:@"Not Available"];
+    
+    if([orderMaster.orderState isEqualToString:@"closed"]){//Determine the color of the status label depending on the order_state
         [status_label setTextColor:[UIColor redColor]];
     } else {
         [status_label setTextColor:[UIColor greenColor]];
     }
-    [status_label setText:@"Closed"];
+    [status_label setText:orderMaster.orderState];
     
     return cell;
 }
@@ -195,7 +289,6 @@ static void CFPShowAlertWithError(NSError *error)
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"Selected cell @ %@ ",indexPath);
     [_roContainerView setHidden:NO];
-    [_roMasterInformationViewController shouldShowTabButtonGroup:YES];
     
     /* What to pass*/
     [self createAndLoadMasterInformationVC:indexPath];
@@ -209,37 +302,77 @@ static void CFPShowAlertWithError(NSError *error)
     
 }
 
+/* Feteched Results Controller */
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.roTableView reloadData];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     //Should not happen
     //Grab the view controller to be segued to for button control and response
     _roMasterInformationViewController = (CFPRecentOrderMasterInformationViewController*)segue.destinationViewController;
 }
 
-- (void)createAndLoadMasterInformationVC:(id)something{
+- (void)createAndLoadMasterInformationVC:(NSIndexPath*)indexPath{
+    
+    //Remove Old Views
+    [_roMasterInformationViewController.view removeFromSuperview];
+    [_roMasterInformationViewController removeFromParentViewController];
+    //End
     
     if(!_roMasterInformationViewController){
         _roMasterInformationViewController = (CFPRecentOrderMasterInformationViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"MasterInformationVC"];
     }
 
+    OrderMaster * orderMaster = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     
-    // Process Request Screen Layover HERE
-    /* Restkit block 
-     
-     * Send for order master object
-     * Order master object returns 
-     * send order master object to be displayed
-     
-     */
 
+    /* Show loader Here*/
     
-    [_roMasterInformationViewController setOrderObject:nil];//Pass order object to use
+    /* End Loader */
     
     
-    //Display loaded information
+    NSArray * parameters = [NSArray arrayWithObject:@{
+                                 @"field":@"order_master_id",
+                                 @"condition":@"equals",
+                                 @"value":[NSString stringWithFormat:@"%@",orderMaster.orderMasterID]}
+                                 ];
     
-    [_roContainerView addSubview:_roMasterInformationViewController.view];
-    [self addChildViewController:_roMasterInformationViewController];
+    RKObjectMapping * orderDetailMapping = [RKObjectMapping mappingForClass:[OrderDetailClass class]];
+    [orderDetailMapping addAttributeMappingsFromDictionary:@{
+     @"success" :@"success",
+     @"data"    :@"data"
+     }];
+    
+    RKResponseDescriptor * responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:orderDetailMapping method:RKRequestMethodPUT pathPattern:@"/rest.svc/API/report/order_detail" keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [[RKObjectManager sharedManager]addResponseDescriptor:responseDescriptor];
+    
+    __block OrderDetailClass * orderDetail;
+    [[RKObjectManager sharedManager]putObject:nil path:@"/rest.svc/API/report/order_detail" parameters:(NSDictionary*)parameters success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        //success
+        orderDetail = [mappingResult firstObject];
+        [_roMasterInformationViewController setOrderObject:orderDetail];//Pass order object to use
+        //Display loaded information
+        
+        [_roContainerView addSubview:_roMasterInformationViewController.view];
+        [self addChildViewController:_roMasterInformationViewController];
+        
+        [_roMasterInformationViewController shouldShowTabButtonGroup:YES];
+        
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        //fail
+        CFPShowAlertWithError(error);
+    }];
+    
+    
+    
+    
+    
+
     
     //END SCREEN HERE
     //[self screenEndingMethod];

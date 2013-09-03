@@ -1,5 +1,79 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="OrderItem" representedClassName="OrderItem" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comp_reason" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="company_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="first_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="is_child" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="is_comp" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="is_void" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="item_category_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="item_category_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="item_cost" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="item_group_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="item_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="item_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="item_price" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="kds_state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_update" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="line_amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="line_discount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="line_discount_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="line_total" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="location_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="order_item_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="order_master_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="parent_order_item_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tax_included" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tax_rule_id_1" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_1_amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tax_rule_id_1_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tax_rule_id_1_percent" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_1_total" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_2" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_2_amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tax_rule_id_2_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tax_rule_id_2_percent" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_2_total" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_3" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_3_amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tax_rule_id_3_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tax_rule_id_3_percent" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_3_total" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_4" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_4_amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tax_rule_id_4_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tax_rule_id_4_percent" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_4_total" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_5" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_5_amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tax_rule_id_5_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tax_rule_id_5_percent" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_5_total" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_6" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_6_amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tax_rule_id_6_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tax_rule_id_6_percent" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_6_total" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_7" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_7_amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tax_rule_id_7_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tax_rule_id_7_percent" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_7_total" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_8" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_8_amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tax_rule_id_8_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tax_rule_id_8_percent" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="tax_rule_id_8_total" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="user_master_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="void_reason" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="OrderMaster" representedClassName="OrderMaster" syncable="YES">
         <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="companyID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -39,7 +113,8 @@
         <attribute name="userMasterID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="OrderSummary" positionX="-63" positionY="-18" width="128" height="330"/>
         <element name="OrderMaster" positionX="160" positionY="192" width="128" height="285"/>
+        <element name="OrderSummary" positionX="-63" positionY="-18" width="128" height="330"/>
+        <element name="OrderItem" positionX="160" positionY="192" width="128" height="1125"/>
     </elements>
 </model>
